@@ -251,7 +251,7 @@ export default function Home({ articles }) {
         </title>
         <meta
           name="description"
-          content=" Hi, I'm Vincent, an Octocat-loving developer community enthusiast based in the Philippines."
+          content="Hi, I'm Suleyman Kiani, a fitness and martial arts instructor, web developer, and enthusiast of chess and basketball."
         />
       </Head>
       <Container className="mt-9">
