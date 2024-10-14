@@ -55,13 +55,13 @@ export default function Uses() {
             </Tool>
             </ToolsSection>
             <Tool title="Laptop">
-              I use <a href="https://pcsupport.lenovo.com/us/en/products/laptops-and-netbooks/300-series/330-14ikb-type-81g2/downloads">Lenovo</a> (330-14IKB (Type 81G2) Laptop (ideapad)) when I’m at Cafe or taking vacation.
+              I use a Mac Pro 16 inch 2021 with Apple M1 Pro and 16 GB of memory when I’m on the go.
             </Tool>
             <ToolsSection title="Important Specs">
             <Tool>
-              - <b>Display:</b> 14’’ (35.56 cm) display, 1920 x 1080 px<br/>
-              - <b>Processor: </b> Intel Core i3 (7th Gen) Processor<br/>
-              - <b>RAM: </b>Upgraded to 20 GB<br/>
+              - <b>Display:</b> 16’’ (40.64 cm) display, 3456 x 2234 px<br/>
+              - <b>Processor: </b> Apple M1 Pro Processor<br/>
+              - <b>RAM: </b>16 GB of memory<br/>
               - <b>Storage: </b>500GB SSD<br/>
             </Tool>
             </ToolsSection>
