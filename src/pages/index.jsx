@@ -21,6 +21,10 @@ import image5 from '@/images/photos/image-5.png'
 // import logoFacebook from '@/images/logos/facebook.svg'
 // import logoPlanetaria from '@/images/logos/planetaria.svg'
 // import logoStarbucks from '@/images/logos/starbucks.svg'
+import logoSKompXcel from '@/images/logos/SKompXcel.png'
+import logoBTC from '@/images/logos/btc.png'
+import logoGiftCash from '@/images/logos/giftcash.jpeg'
+import logoSDI from '@/images/logos/sdi.jpeg'
 import logoDevProtocol from '@/images/logos/devprotocol.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
@@ -140,11 +144,11 @@ function Newsletter() {
 function Resume() {
   let resume = [
     {
-      company: 'Dev Protoocol',
-      title: 'Program Manager',
-      logo: logoDevProtocol,
-      start: 'Jan 2022',
-      end: 'Nov 2022',
+      company: 'SKompXcel',
+      title: 'Founder',
+      logo: logoSKompXcel,
+      start: 'Jan 2024',
+      end: 'Present',
       // start: '2019',
       // end: {
       //   label: 'Present',
@@ -152,18 +156,32 @@ function Resume() {
       // },
     },
     {
-      company: 'Dev Protocol',
-      title: 'Developer Relations',
+      company: 'E&S Solns.',
+      title: 'Co-Founder and Lead Developer',
       logo: logoDevProtocol,
-      start: 'Oct 2021',
-      end: '2019',
+      start: 'June 2023',
+      end: 'Present',
     },
     {
-      company: 'Dev Protocol',
-      title: 'DevRel Intern',
-      logo: logoDevProtocol,
-      start: 'Jul 2021',
-      end: 'Oct 2021',
+      company: 'Burlington Training Center',
+      title: 'Mixed Martial Arts/Fitness Instructor & IT Administrator',
+      logo: logoBTC,
+      start: 'March 2024',
+      end: 'Present',
+    },
+    {
+      company: 'GiftCash Inc.',
+      title: 'Software Developer Intern',
+      logo: logoGiftCash,
+      start: 'May 2021',
+      end: ' Aug 2022',
+    },
+    {
+      company: 'SDI Labs.',
+      title: 'Software Engineer Intern',
+      logo: logoSDI,
+      start: 'June 2019',
+      end: ' Aug 2022',
     },
   ]
 
