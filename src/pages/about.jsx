@@ -41,10 +41,10 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>Vincent Villafuerte | About</title>
+        <title>Suleyman Kiani | About</title>
         <meta
           name="description"
-          content="I’m Vincent Villafuerte also known as vinzvinci. I live in Las Piñas City, Philippines, where I design the future."
+          content="Hi, I'm Suleyman Kiani, a fitness and martial arts instructor, web developer, and enthusiast of chess and basketball."
         />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -61,47 +61,43 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Vincent Villafuerte also known as vinzvinci.
+              I’m Suleyman Kiani also known as Suley.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
                 Hey there 👋
               </p>
               <p>
-                My name is Vincent Villafuerte, but you can call me vinz for short. I am a passionate and dedicated college student who is on the verge 
-                of graduating with a Bachelor’s degree in Information Systems. As an avid Octocat lover and OSS Advocate, I am constantly seeking ways to
-                engage with the developer community and learn from their experiences.
+                My name is Suleyman Kiani, and I am a passionate fitness and martial arts instructor, as well as a web developer. I enjoy sharing my journey and experiences with others, and I believe in the power of community and collaboration.
               </p>
               <p>
-                Technology has become a central part of my daily life, and I am passionate about the open-source community and the ways in which it 
-                promotes communication and collaboration. I am grateful to have found my love for coding at an early age and to have had the opportunity 
-                to mentor other students and make connections with people in the tech industry around the world.
+                With a strong background in fitness, I strive to inspire others to lead healthier lives while also pursuing my passion for web development. I love creating platforms that connect people and share knowledge.
               </p>
               <p>
-                Overall, I am grateful for the path I have chosen in the tech industry and am excited to see where it takes me in the future.
+                Overall, I am excited about the future and the opportunities it holds for both my fitness journey and my career in web development.
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink href="https://twitter.com/vinzvinci" icon={TwitterIcon}>
+              <SocialLink href="https://twitter.com/" icon={TwitterIcon}>
                 Follow on Twitter
               </SocialLink>
-              <SocialLink href="https://www.instagram.com/vinzvinci/" icon={InstagramIcon} className="mt-4">
+              <SocialLink href="https://www.instagram.com/svley/" icon={InstagramIcon} className="mt-4">
                 Follow on Instagram
               </SocialLink>
-              <SocialLink href="https://github.com/vinzvinci" icon={GitHubIcon} className="mt-4">
+              <SocialLink href="https://github.com/kianis4/" icon={GitHubIcon} className="mt-4">
                 Follow on GitHub
               </SocialLink>
-              <SocialLink href="https://www.linkedin.com/in/vinzvinci/" icon={LinkedInIcon} className="mt-4">
+              <SocialLink href="https://www.linkedin.com/in/suleyman-kiani-9249a0240/" icon={LinkedInIcon} className="mt-4">
                 Follow on LinkedIn
               </SocialLink>
               <SocialLink
-                href="mailto:spencer@planetaria.tech"
+                href="mailto:suley.kiani@outlook.com"
                 icon={MailIcon}
                 className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
               >
-                info.vinzvinci@gmail.com
+                suley.kiani@outlook.com
               </SocialLink>
             </ul>
           </div>
