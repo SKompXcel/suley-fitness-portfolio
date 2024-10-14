@@ -17,10 +17,10 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.png'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
+// import logoAirbnb from '@/images/logos/airbnb.svg'
+// import logoFacebook from '@/images/logos/facebook.svg'
+// import logoPlanetaria from '@/images/logos/planetaria.svg'
+// import logoStarbucks from '@/images/logos/starbucks.svg'
 import logoDevProtocol from '@/images/logos/devprotocol.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
@@ -207,7 +207,7 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="./Villafuerte-Vincent_Resume.pdf" variant="secondary" className="group mt-6 w-full">
+      <Button href="./suleymankiani_resume1024.pdf" variant="secondary" className="group mt-6 w-full">
         Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -247,7 +247,7 @@ export default function Home({ articles }) {
     <>
       <Head>
         <title>
-          Vincent Villafuerte | Home
+          Suleyman Kiani | Home
         </title>
         <meta
           name="description"
@@ -265,22 +265,22 @@ export default function Home({ articles }) {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://twitter.com/vinzvinci"
+              href="https://twitter.com/"
               aria-label="Follow on Twitter"
               icon={TwitterIcon}
             />
             <SocialLink
-              href="https://www.instagram.com/vinzvinci/"
+              href="https://www.instagram.com/svley/"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
             <SocialLink
-              href="https://github.com/vinzvinci"
+              href="https://github.com/kianis4"
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://www.linkedin.com/in/vinzvinci/"
+              href="https://www.linkedin.com/in/suleyman-kiani-9249a0240/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
