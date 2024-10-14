@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
+import logoSkompXcel from '@/images/logos/SKompXcel.png'
 import logoCosmos from '@/images/logos/cosmos.svg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
@@ -11,17 +12,17 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
-    name: 'WebX DAO',
+    name: 'SkompXcel',
     description:
-      'We focus on building and talking about possible future usage of web technologies.',
-    link: { href: 'https://github.com/WebXDAO', label: 'github.com/WebXDAO' },
-    logo: logoPlanetaria,
+      'Sole Proprietor - Expert tutoring and academic assistance...',
+    link: { href: 'https://skompxcel.com/', label: 'skompxcel.com' },
+    logo: logoSkompXcel,
   },
   {
-    name: 'SurPath Hub',
+    name: 'E&S Solns.',
     description:
-      'Inclusive Open Source Community for Filipino student ',
-    link: { href: 'https://github.com/SurPathHub', label: 'github.com/SurPathHub' },
+      'Co-Founder and Lead Developer - Automation and software solutions for small businesses...',
+    link: { href: 'https://www.es-soln.com/', label: 'es-soln.com' },
     logo: logoAnimaginary,
   },
 ]
