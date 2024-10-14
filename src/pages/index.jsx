@@ -257,13 +257,11 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Open Source Advocate and Developer Community Specialist
+            Fitness Journey and Beyond
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          Hi, I’m Vincent, a dedicated and experienced GitHub Field Expert and Open Source Advocate. 
-          My passion lies in building strong relationships within the developer community, and 
-          I am the proud founder of both WebX DAO and SurPath Hub, two open-source communities aimed
-          at promoting the widespread use and accessibility of open source technology.
+          As a fitness enthusiast, I created this website to share my journey and evolution with the world. With my background in web development, I wanted to leverage my skills to build a platform where I can document my progress, share my ideas, and connect with like-minded individuals. 
+          Through this site, I aim to provide a glimpse into my fitness experiences, successes, and setbacks, in the hopes of inspiring and motivating others to embark on their own fitness journeys.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
