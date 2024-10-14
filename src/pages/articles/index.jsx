@@ -41,12 +41,12 @@ export default function ArticlesIndex({ articles }) {
         <title>Suleyman Kiani | Articles</title>
         <meta
           name="description"
-          content="A collection of my thoughts and experiences as I navigate my fitness journey, from setbacks to successes."
+          content="A collection of my thoughts and experiences as I navigate my fitness, academic, and professional journey, from setbacks to successes."
         />
       </Head>
       <SimpleLayout
-        title="My Fitness Journey: Reflections and Insights"
-        intro="A collection of my thoughts and experiences as I navigate my fitness journey, from setbacks to successes."
+        title="My Journey: Reflections and Insights - A Timeline"
+        intro="A collection of my thoughts and experiences as I navigate my fitness, academic, and professional journey, from setbacks to successes."
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
