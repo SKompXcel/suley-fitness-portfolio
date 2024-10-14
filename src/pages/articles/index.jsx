@@ -38,15 +38,15 @@ export default function ArticlesIndex({ articles }) {
   return (
     <>
       <Head>
-        <title>Vincent Villafuerte | Articles</title>
+        <title>Suleyman Kiani | Articles</title>
         <meta
           name="description"
-          content="All of my long-form thoughts on community, leadership, volunteering, and more, collected in chronological order."
+          content="A collection of my thoughts and experiences as I navigate my fitness journey, from setbacks to successes."
         />
       </Head>
       <SimpleLayout
-        title="Writing on open source, community building, and the tech industry."
-        intro="All of my long-form thoughts on community, leadership, volunteering, and more, collected in chronological order."
+        title="My Fitness Journey: Reflections and Insights"
+        intro="A collection of my thoughts and experiences as I navigate my fitness journey, from setbacks to successes."
       >
         <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
           <div className="flex max-w-3xl flex-col space-y-16">
