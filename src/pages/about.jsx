@@ -68,15 +68,16 @@ export default function About() {
                 Hey there 👋
               </p>
               <p>
-                My name is Suleyman Kiani, and I am a passionate fitness and martial arts instructor, as well as a web developer. I enjoy sharing my journey and experiences with others, and I believe in the power of community and collaboration.
+                My name is Suleyman Kiani, and I’m incredibly passionate about both fitness and technology. I’m a martial arts instructor, fitness enthusiast, and a web developer. Over the years, I’ve found joy in helping others unlock their potential—whether it’s guiding students through martial arts, mentoring individuals in coding, or building digital platforms that foster learning and growth.
               </p>
               <p>
-                With a strong background in fitness, I strive to inspire others to lead healthier lives while also pursuing my passion for web development. I love creating platforms that connect people and share knowledge.
+                My background in fitness, especially through martial arts, has taught me the value of discipline, hard work, and resilience. These values carry over into my passion for web development, where I love creating tools that connect people and share knowledge. Co-founding E&S Solutions and launching SKompXcel has allowed me to bring both my passions—fitness and tech—together in meaningful ways.
               </p>
               <p>
-                Overall, I am excited about the future and the opportunities it holds for both my fitness journey and my career in web development.
+                I’m driven by the belief that learning and growth are lifelong pursuits. I’m excited about the future and the endless possibilities that lie ahead in both my fitness journey and my career as a developer. Whether I’m in the dojo or at my desk, I’m always focused on pushing limits, helping others, and staying committed to the communities I care about.
               </p>
             </div>
+
           </div>
           <div className="lg:pl-20">
             <ul role="list">
