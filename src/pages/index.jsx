@@ -293,8 +293,7 @@ export default function Home({ articles }) {
             Fitness Journey and Beyond
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-          As a fitness enthusiast, I created this website to share my journey and evolution with the world. With my background in web development, I wanted to leverage my skills to build a platform where I can document my progress, share my ideas, and connect with like-minded individuals. 
-          Through this site, I aim to provide a glimpse into my fitness experiences, successes, and setbacks, in the hopes of inspiring and motivating others to embark on their own fitness journeys.
+            As a fitness enthusiast and web developer, I built this site to share my journey in a way that feels personal and real. Using Next.js 14 and deploying with Vercel—one of the many services offered by ES Solutions—I wanted to combine my love for tech with my passion for fitness. This platform allows me to document my progress, share ideas, and connect with others who are on similar paths. I’ll be posting regular updates through articles, giving an honest look at my experiences—the wins, the challenges, and everything in between. My goal is to inspire anyone and everyone to start or keep going on their own fitness journey, while enjoying the process along the way!
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
