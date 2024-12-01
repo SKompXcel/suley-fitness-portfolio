@@ -25,6 +25,14 @@ const projects = [
     link: { href: 'https://www.es-soln.com/', label: 'es-soln.com' },
     logo: logoAnimaginary,
   },
+  {
+    name: 'Evergreen Renos',
+    description: 
+      'Developer - Built a web application to streamline operations for a renovation business in the GTA, helping enhance customer experience and project management.',
+    link: { href: 'https://www.evergreenrenos.ca/', label: 'evergreenrenos.ca' },
+    logo: logoPlanetaria,
+  },
+
 ]
 
 function LinkIcon(props) {
