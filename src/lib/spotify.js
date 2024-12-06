@@ -1,8 +1,6 @@
 // src/lib/spotify.js
 
 const getAccessToken = async () => {
-  console.log('Client ID:', process.env.SPOTIFY_CLIENT_ID); // Debugging
-  console.log('Refresh Token:', process.env.SPOTIFY_REFRESH_TOKEN);
 
   const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
 
@@ -24,7 +22,6 @@ const getAccessToken = async () => {
   if (!response.ok) {
     throw new Error(`Spotify token error: ${data.error || 'Unknown error'}`);
   }
-  console.log('Access token response:', data);
   return data;
 };
 
@@ -41,7 +38,6 @@ export const topTracks = async () => {
 
 export const topArtists = async () => {
   const { access_token } = await getAccessToken();
-  console.log('Access token for topArtists:', access_token);
 
   return fetch("https://api.spotify.com/v1/me/top/artists", {
     headers: {
