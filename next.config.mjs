@@ -9,6 +9,9 @@ const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
+  images: {
+    domains: ['i.scdn.co'], // Allow Spotify images
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.(mp4|webm|ogg|avi|mov)$/,
@@ -16,8 +19,8 @@ const nextConfig = {
         loader: 'file-loader',
         options: {
           name: '[name].[hash].[ext]',
-          outputPath: 'static/videos/',  // Video files will be output here
-          publicPath: '/_next/static/videos/',  // Public URL for accessing videos
+          outputPath: 'static/videos/', // Video files will be output here
+          publicPath: '/_next/static/videos/', // Public URL for accessing videos
         },
       },
     });
