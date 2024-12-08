@@ -10,7 +10,12 @@ const nextConfig = {
     scrollRestoration: true,
   },
   images: {
-    domains: ['i.scdn.co'], // Allow Spotify images
+    domains: [
+      'i.scdn.co',
+      'www.motortrend.com',
+      'hips.hearstapps.com',
+      'dealerinspire-image-library-prod.s3.us-east-1.amazonaws.com'
+    ], // Allow Spotify images
   },
   webpack(config) {
     config.module.rules.push({
