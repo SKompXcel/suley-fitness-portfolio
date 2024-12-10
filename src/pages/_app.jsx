@@ -1,3 +1,5 @@
+// /src/pages/_app.tsx
+
 import { useEffect, useRef } from 'react'
 
 import { Footer } from '@/components/Footer'
@@ -18,6 +20,7 @@ function usePrevious(value) {
 
 export default function App({ Component, pageProps, router }) {
   let previousPathname = usePrevious(router.pathname)
+  const isInstaPage = router.pathname === '/insta'
 
   return (
     <>
@@ -26,12 +29,15 @@ export default function App({ Component, pageProps, router }) {
           <div className="w-full bg-white ring-1 ring-zinc-100 dark:bg-zinc-900 dark:ring-zinc-300/20" />
         </div>
       </div>
+      {/* Main Layout */}
       <div className="relative">
-        <Header />
+        {/* Conditionally Render Header */}
+        {!isInstaPage && <Header />}
         <main>
           <Component previousPathname={previousPathname} {...pageProps} />
         </main>
-        <Footer />
+        {/* Conditionally Render Footer */}
+        {!isInstaPage && <Footer />}
       </div>
     </>
   )

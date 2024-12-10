@@ -9,7 +9,7 @@ const Carousel = dynamic(() => import('@/components/Carousel'), { ssr: false });
 
 export default function InstagramMedia() {
   return (
-    <main className="flex justify-center items-center h-screen bg-black">
+    <main className="flex justify-center items-center h-screen ">
       <Carousel />
     </main>
   );
