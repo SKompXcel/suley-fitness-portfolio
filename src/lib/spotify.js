@@ -27,7 +27,6 @@ const getAccessToken = async () => {
 
 export const topTracks = async () => {
   const { access_token } = await getAccessToken();
-  console.log('Access token for topTracks:', access_token);
 
   return fetch("https://api.spotify.com/v1/me/top/tracks", {
     headers: {
