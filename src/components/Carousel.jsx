@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -114,6 +115,7 @@ const Carousel = () => {
                 className="w-full h-full object-cover"
                 width={200}
                 height={300}
+                unoptimized
                 priority
               />
             </div>
