@@ -349,10 +349,6 @@ export default function Home({ articles }) {
             or even just chatting about fitness</strong>, feel free to explore and reach out!
           </p>
 
-          <p className="mt-4 text-lg font-semibold text-blue-500 dark:text-blue-400">
-            🚀 <a href="/projects" className="hover:underline">Check out my projects, resume, and more right here.</a>
-          </p>
-
           <div className="mt-6 flex gap-6">
             <SocialLink
               href="https://www.instagram.com/svley/"
