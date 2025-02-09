@@ -7,7 +7,6 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
-  TwitterIcon,
   InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
@@ -290,17 +289,71 @@ export default function Home({ articles }) {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Fitness Journey and Beyond
+            Welcome to My World – Cloud, Code, and Combat 💻🥋💪
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            As a fitness enthusiast and web developer, I built this site to share my journey in a way that feels personal and real. Using Next.js 14 and deploying with Vercel—one of the many services offered by ES Solutions—I wanted to combine my love for tech with my passion for fitness. This platform allows me to document my progress, share ideas, and connect with others who are on similar paths. I’ll be posting regular updates through articles, giving an honest look at my experiences—the wins, the challenges, and everything in between. My goal is to inspire anyone and everyone to start or keep going on their own fitness journey, while enjoying the process along the way!
+            I’m Suleyman Kiani—also known as <strong>Suley</strong>. This site is more than just a portfolio; 
+            it’s a place where <strong>technology, problem-solving, and fitness collide</strong>.
           </p>
+          <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
+            As a <strong>cloud solutions enthusiast, full-stack developer, problem solver, and personal trainer</strong>, 
+            I built this platform using <strong>Next.js 14</strong> and deployed it with <strong>Vercel</strong>, integrating <strong>AWS cloud services</strong>—one of the many solutions I specialize in at <strong>E&S Solutions</strong>.
+          </p>
+          <p className="mt-4 text-base text-zinc-600 dark:text-zinc-400">
+            I created this space to <strong>document my journey, share insights, and connect with like-minded individuals</strong>. 
+            Whether it’s <strong>breaking down complex cloud architectures, solving algorithmic challenges (500+ LeetCode problems and counting! 😆), 
+            or coaching clients through fitness transformations</strong>, I love <strong>applying knowledge to real-world challenges</strong>.
+          </p>
+
+          {/* Updated Section Layout */}
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-100 dark:bg-gray-800">
+              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">🚀 Tech & Cloud Insights</h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                Articles on <strong>cloud architecture, DevOps, full-stack development, and automation</strong>.
+              </p>
+            </div>
+
+            <div className="p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-100 dark:bg-gray-800">
+              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">🥋 Fitness & Martial Arts</h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                My experiences as a <strong>personal trainer & martial arts instructor</strong> in 
+                <strong> Kickboxing & Wado Ryu Karate</strong>.
+              </p>
+            </div>
+
+            <div className="p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-100 dark:bg-gray-800">
+              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">🧠 Problem-Solving & Growth</h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                My thoughts on <strong>learning, teaching, and overcoming challenges</strong>—both in tech and fitness.
+              </p>
+            </div>
+
+            <div className="p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-100 dark:bg-gray-800">
+              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">📖 Honest Experiences</h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                The <strong>wins, struggles, and lessons learned along the way</strong>, because growth isn’t always linear.
+              </p>
+            </div>
+
+            <div className="p-4 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-100 dark:bg-gray-800 sm:col-span-2">
+              <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-100">💼 Projects & Resume</h3>
+              <p className="text-sm text-zinc-600 dark:text-zinc-400">
+                A showcase of <strong>my past work, technical projects, and professional experience</strong>—all in one place.
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-8 text-base text-zinc-600 dark:text-zinc-400">
+            <strong>Want to Connect?</strong> If you’re interested in <strong>collaborating, discussing cloud solutions, solving complex problems, 
+            or even just chatting about fitness</strong>, feel free to explore and reach out!
+          </p>
+
+          <p className="mt-4 text-lg font-semibold text-blue-500 dark:text-blue-400">
+            🚀 <a href="/projects" className="hover:underline">Check out my projects, resume, and more right here.</a>
+          </p>
+
           <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com/"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
             <SocialLink
               href="https://www.instagram.com/svley/"
               aria-label="Follow on Instagram"
@@ -312,7 +365,7 @@ export default function Home({ articles }) {
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://www.linkedin.com/in/suleyman-kiani-9249a0240/"
+              href="https://www.linkedin.com/in/suleyman-kiani"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
