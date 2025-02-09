@@ -61,23 +61,81 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I’m Suleyman Kiani also known as Suley.
+              I’m Suleyman Kiani, also known as Suley.
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
+              <p>Hey there! 👋</p>
               <p>
-                Hey there 👋
+                I’m a <strong>cloud solutions enthusiast, problem solver, full-stack developer, and personal trainer</strong>. 
+                Whether I’m <strong>designing scalable cloud architectures, developing full-stack applications, solving LeetCode problems, 
+                or coaching clients in fitness</strong>, I thrive on pushing boundaries and helping others unlock their full potential.
               </p>
               <p>
-                My name is Suleyman Kiani, and I’m incredibly passionate about both fitness and technology. I’m a martial arts instructor, fitness enthusiast, and a web developer. Over the years, I’ve found joy in helping others unlock their potential—whether it’s guiding students through martial arts, mentoring individuals in coding, or building digital platforms that foster learning and growth.
+                I graduated from <strong>McMaster University</strong> with a <strong>Bachelor of Applied Science in Computer Science</strong>, 
+                where I developed a strong foundation in <strong>cloud computing, software engineering, and systems design</strong>. 
+                I’ve since applied my skills across a variety of domains, from deploying <strong>Next.js apps and Express.js backends 
+                on AWS</strong> to architecting <strong>serverless infrastructures</strong> that scale seamlessly.
               </p>
               <p>
-                My background in fitness, especially through martial arts, has taught me the value of discipline, hard work, and resilience. These values carry over into my passion for web development, where I love creating tools that connect people and share knowledge. Co-founding E&S Solutions and launching SKompXcel has allowed me to bring both my passions—fitness and tech—together in meaningful ways.
+                I’ve also solved <strong>500+ LeetCode problems</strong> (yes, for fun 😆) because I genuinely enjoy the 
+                challenge of <strong>systems design, data structures, and optimization</strong>. 
+                If you love a good challenge, check out my LeetCode profile:{" "}
+                <a 
+                  href="https://leetcode.com/u/kianis4/" 
+                  className="text-blue-500 dark:text-blue-400 hover:underline"
+                  target="_blank" 
+                  rel="noopener noreferrer">
+                  leetcode.com/u/kianis4/
+                </a>.
               </p>
               <p>
-                I’m driven by the belief that learning and growth are lifelong pursuits. I’m excited about the future and the endless possibilities that lie ahead in both my fitness journey and my career as a developer. Whether I’m in the dojo or at my desk, I’m always focused on pushing limits, helping others, and staying committed to the communities I care about.
+                Beyond tech, I’m a <strong>martial arts instructor and personal trainer</strong>, teaching 
+                <strong> Kickboxing and Wado Ryu Karate</strong>. Martial arts has shaped my <strong>discipline, resilience, 
+                and problem-solving mindset</strong>—all of which translate directly into my work as a developer.
+              </p>
+
+              {/* Personal Training Section */}
+              <div className="mt-8 p-6 border border-gray-300 dark:border-gray-600 rounded-lg shadow-md bg-gray-100 dark:bg-gray-800">
+                <h2 className="text-2xl font-semibold text-zinc-800 dark:text-zinc-100">💪 Get in Shape with Me! 💪</h2>
+                <p className="mt-3 text-zinc-600 dark:text-zinc-400">
+                  As a certified personal trainer and martial arts instructor, I help clients achieve their fitness goals 
+                  through <strong>personalized workout programs, macro-based nutrition plans, and data-driven progress tracking</strong>. 
+                  Whether you're looking to <strong>lose weight, build muscle, improve endurance, or enhance athletic performance</strong>, 
+                  I create customized programs tailored to your needs.
+                </p>
+                <p className="mt-2 text-zinc-600 dark:text-zinc-400">
+                  My approach includes:
+                </p>
+                <ul className="list-disc list-inside mt-2 text-zinc-600 dark:text-zinc-400">
+                  <li>📊 <strong>Fitness Assessments & Goal Setting</strong> – Analyzing your current physical fitness and designing structured plans.</li>
+                  <li>🍽️ <strong>Macro-Based Nutrition Planning</strong> – Custom meal plans to fuel your workouts and optimize results.</li>
+                  <li>🏋️ <strong>Strength & Conditioning Workouts</strong> – Progressive overload training to build muscle and improve performance.</li>
+                  <li>📈 <strong>Data-Driven Progress Tracking</strong> – Visualizing your improvements in strength, endurance, and body composition.</li>
+                </ul>
+                <p className="mt-4 text-zinc-600 dark:text-zinc-400">
+                  <strong>Interested?</strong> Let's chat! I offer a **FREE fitness consultation** to help you get started on your journey. 
+                  Reach out via{" "}
+                  <a 
+                    href="mailto:suley.kiani@outlook.com" 
+                    className="text-blue-500 dark:text-blue-400 hover:underline">
+                    email
+                  </a>{" "}
+                  or connect with me on{" "}
+                  <a 
+                    href="https://linkedin.com/in/suleyman-kiani" 
+                    className="text-blue-500 dark:text-blue-400 hover:underline">
+                    LinkedIn
+                  </a> to set up a session!
+                </p>
+              </div>
+
+              <p className="mt-8">
+                At my core, I love <strong>building things that make a difference</strong>. Whether it’s <strong>developing scalable software, 
+                automating business workflows, coaching fitness clients, or mentoring future engineers</strong>, I’m always looking for ways to 
+                <strong> apply technology and strategy to solve meaningful problems</strong>. If you're into <strong>cloud computing, problem-solving, 
+                or just love a good challenge</strong>, let's connect and build something awesome! 🚀
               </p>
             </div>
-
           </div>
           <div className="lg:pl-20">
             <ul role="list">
