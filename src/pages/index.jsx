@@ -161,14 +161,14 @@ function Resume() {
     },
     {
       company: 'Burlington Training Center',
-      title: 'Mixed Martial Arts/Fitness Instructor & IT Administrator',
+      title: 'Software & IT Systems Developer / Martial Arts Instructor',
       logo: logoBTC,
       start: 'March 2024',
       end: 'Present',
     },
     {
       company: 'GiftCash Inc.',
-      title: 'Software Developer Intern',
+      title: 'Junior Web Developer',
       logo: logoGiftCash,
       start: 'May 2021',
       end: ' Aug 2022',
@@ -222,7 +222,7 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="./Suleyman_Kiani_RESUME_DEC_2024.pdf" variant="secondary" className="group mt-6 w-full">
+      <Button href="./Suleyman_Kiani_RESUME_2025.pdf" variant="secondary" className="group mt-6 w-full">
         Download Resume
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
