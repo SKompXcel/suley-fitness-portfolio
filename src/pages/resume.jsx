@@ -1,6 +1,6 @@
 import React from 'react';
 import { Document, Page } from 'react-pdf';
-import resumeFile from './Suleyman_Kiani_RESUME_2025.pdf';
+import resumeFile from '../../public/Suleyman_Kiani_RESUME_2025.pdf';
 
 function Resume() {
     return (
