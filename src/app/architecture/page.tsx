@@ -5,7 +5,6 @@ import { buildMeta } from '@/lib/buildMeta'
 import cockpitHome from '@/images/showcase/agentic-os/01-home-launchpad.png'
 import cockpitClaude from '@/images/showcase/agentic-os/02-guided-card-claude.png'
 import cockpitYou from '@/images/showcase/agentic-os/03-guided-card-you.png'
-import cockpitMap from '@/images/showcase/agentic-os/04-system-map.png'
 
 export const metadata = buildMeta({
   title: 'Architecture',
@@ -125,12 +124,6 @@ const COCKPIT_SHOTS: PhoneShot[] = [
     alt: 'Agentic OS mobile app, a guided card only the operator can act on',
     caption:
       'A card only I can do. The steps, and a button that just records it done.',
-  },
-  {
-    image: cockpitMap,
-    alt: 'Agentic OS mobile app, the system map reading order',
-    caption:
-      'A guided reading order through the architecture, freshest diagrams first.',
   },
 ]
 
