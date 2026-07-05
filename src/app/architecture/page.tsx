@@ -1,6 +1,11 @@
 import { Container } from '@/components/Container'
 import { Reveal } from '@/components/home/Reveal'
+import { PhoneGallery, type PhoneShot } from '@/components/home/PhoneGallery'
 import { buildMeta } from '@/lib/buildMeta'
+import cockpitHome from '@/images/showcase/agentic-os/01-home-launchpad.png'
+import cockpitClaude from '@/images/showcase/agentic-os/02-guided-card-claude.png'
+import cockpitYou from '@/images/showcase/agentic-os/03-guided-card-you.png'
+import cockpitMap from '@/images/showcase/agentic-os/04-system-map.png'
 
 export const metadata = buildMeta({
   title: 'Architecture',
@@ -98,6 +103,43 @@ const DIAGRAMS: Diagram[] = [
       'Stripe', 'Sentry',
     ],
   },
+]
+
+// The mobile cockpit: real captures of the iOS app that drives the Agentic OS.
+// Captions are the approved, confidentiality-reviewed copy, verbatim.
+const COCKPIT_SHOTS: PhoneShot[] = [
+  {
+    image: cockpitHome,
+    alt: 'Agentic OS mobile app, home launch pad screen',
+    caption:
+      'The launch pad. One screen: the next decision, quick stats, one system-health line.',
+  },
+  {
+    image: cockpitClaude,
+    alt: 'Agentic OS mobile app, a guided card the machine can act on',
+    caption:
+      'A card the machine can act on. It shows what the agent will do, then returns the result to the same queue.',
+  },
+  {
+    image: cockpitYou,
+    alt: 'Agentic OS mobile app, a guided card only the operator can act on',
+    caption:
+      'A card only I can do. The steps, and a button that just records it done.',
+  },
+  {
+    image: cockpitMap,
+    alt: 'Agentic OS mobile app, the system map reading order',
+    caption:
+      'A guided reading order through the architecture, freshest diagrams first.',
+  },
+]
+
+const COCKPIT_STACK: string[] = [
+  'SwiftUI',
+  'FastAPI',
+  'Tailscale',
+  'SwiftUI Watch',
+  'delivery-tested',
 ]
 
 // The Claude-native engineering surface — what makes this a "Claude developer"
@@ -216,6 +258,42 @@ export default function Architecture() {
           and knowledge base for accuracy and reviewed the render for legibility.
           This page was built by the system it documents.
         </p>
+      </Reveal>
+
+      {/* ── The cockpit ──────────────────────────────────────────────────── */}
+      <Reveal
+        as="section"
+        className="mt-10 rounded-xl border border-accent/20 bg-ink-surface/40 p-6 sm:p-8"
+      >
+        <p className="mb-4 font-mono text-sm uppercase tracking-wider text-ink-muted">
+          the cockpit
+        </p>
+        <h2 className="max-w-2xl text-2xl font-medium tracking-tight text-ink-text sm:text-3xl">
+          Mission control, on my phone
+        </h2>
+        <p className="mt-4 max-w-2xl text-base text-zinc-400">
+          The Agentic OS runs on an always-on server. This is the app I built to
+          run it from my phone: one queue of decisions the system surfaces, each
+          card honest about who acts and what happens next.
+        </p>
+
+        <div className="mt-10">
+          <PhoneGallery shots={COCKPIT_SHOTS} />
+        </div>
+
+        <p className="mt-10 max-w-3xl text-base text-zinc-300">
+          Every card states who acts (me or the machine), the exact steps, the
+          literal action its button takes, and what to expect after I tap it. The
+          labels are computed on the server by the same code that runs the action,
+          so a button cannot promise something the system does not do. Built in
+          SwiftUI with a FastAPI backend over a private network, delivery-tested
+          screen by screen against the live system.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {COCKPIT_STACK.map((t) => (
+            <Chip key={t}>{t}</Chip>
+          ))}
+        </div>
       </Reveal>
 
       {/* ── The gallery ──────────────────────────────────────────────────── */}
