@@ -1,0 +1,46 @@
+# Production smoke check for www.suleyman.io.
+#
+# Every 6 hours (plus manual dispatch) it curls the three key pages and
+# asserts HTTP 200 + a stable sentinel string per page. A failure fails the
+# workflow run, which GitHub surfaces via the standard workflow-failure
+# notification — no external alerting needed.
+name: Prod smoke
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check key pages
+        run: |
+          set -euo pipefail
+
+          check() {
+            local path="$1" sentinel="$2"
+            local url="https://www.suleyman.io${path}"
+            local body status
+            body=$(curl -sS --max-time 30 -w '\n%{http_code}' "$url")
+            status=$(printf '%s' "$body" | tail -n 1)
+            body=$(printf '%s' "$body" | sed '$d')
+            if [ "$status" != "200" ]; then
+              echo "FAIL: $url returned HTTP $status (expected 200)"
+              return 1
+            fi
+            if ! printf '%s' "$body" | grep -qF "$sentinel"; then
+              echo "FAIL: $url missing sentinel: $sentinel"
+              return 1
+            fi
+            echo "OK: $url (200, sentinel present)"
+          }
+
+          rc=0
+          check "/" "Suleyman Kiani | Home" || rc=1
+          check "/architecture" "Architecture - Suleyman Kiani" || rc=1
+          check "/articles" "Articles - Suleyman Kiani" || rc=1
+          exit "$rc"
