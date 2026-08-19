@@ -63,11 +63,37 @@ fences, math coherence) before shipping. Proven pattern: 2026-06-12, two rounds.
 - **Every claim must be sourced and defensible.** No round percentages without a basis
   (the old Giftcash 20/25/30% were flagged as reading fabricated by a 6-recruiter
   panel — `docs/recruiter-review.md`). Current vetted numbers: 200% of quota ($4M vs
-  $2M, April + May 2026, every month since month two), $17–18M in-recovery stock with
-  ~$1M per point of PORTFOLIO recovery rate (separate bases — never couple them),
-  1,600+ Solstice tests (vitest list 2026-06-12: 1,648), 500+ users, **$40K+ CAD
-  processed since launch** (owner-confirmed 2026-06-12), 100+ learners, 70 Playwright
-  e2e specs per preview, shadow-DB migration checks, Gitleaks CI.
+  $2M, April + May 2026, every month since month two), **collections scorecard: 2,079
+  live delinquent contracts scored/ranked, 73% of the top 100 reordered vs a plain
+  balance sort, weights from a six-year delinquency history (18,699-contract
+  delinquent-ever population), scorer reproduces 1,023/1,023 rows in plain Excel,
+  APPROVED FOR LAUNCH by the business 2026-08-18**, **quoting tool: 14 manufacturers,
+  13 replaced Excel calculators, 450 automated tests**, **validator: 1-2 hour first
+  pass to about a minute, 50-package evaluation suite**, 2,900+ Solstice tests, **$40K+
+  CAD processed since launch** (owner-confirmed 2026-06-12), 100+ learners, shadow-DB
+  migration checks, Gitleaks CI.
+
+- **RETRACTED / BANNED NUMBERS — never reintroduce (2026-08-18 truthing pass).** These
+  were live in every variant and were shipped in real applications before being caught:
+  - **$17–18M in-recovery stock — RETRACTED BY HIS OWN TEAM** 2026-05-25 ("old $17–18M
+    figure was stale and was on the cover"; aligned to $8–10M bailiff exposure,
+    Supratim-verified). It was also never the base the scorecard ranks. Use the 2,079
+    contract / 73% numbers instead; they are stronger anyway.
+  - **~$1M per point of recovery rate** is the TEAM's Gate-1 business-case estimate, not
+    a measured outcome. Fine to say internally at MHC; on a resume it must never be
+    stated as realized value.
+  - **$50M net-invest book — VETOED** in his own facts inventory. Not on any variant.
+  - **"a locked out-of-time holdout" is FALSE.** The validation JSON says out-of-time is
+    PENDING. Say "customer-grouped holdout with five-fold cross-validation".
+  - **"the company's FIRST internal innovation review" is false** — STP is an
+    established program with a coordinator, a template, and 25+ competing projects.
+  - **"Underwrite the credit" claims approval authority he does not hold.** Credit
+    adjudicates; he structures and submits.
+  - **"500+ users" and "70 Playwright e2e specs"** were re-flagged by reviewers and are
+    NOT re-verified as of 2026-08-18 — do not use until a fresh count is run. Migrations
+    ground truth is **80**, not 49/84.
+  - **Never couple the Vitest suite to the Vercel preview.** Vitest runs hermetically in
+    CI; only the Playwright suite touches a preview.
 - **SKomp Studio is the founder ENTITY** (experience entry on every variant); Solstice
   Pilates is its flagship client platform, built and operated solo.
 - **No payment-bug confession bullets** (owner decision 2026-06-12: bugs in

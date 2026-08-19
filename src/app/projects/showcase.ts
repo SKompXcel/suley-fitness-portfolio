@@ -49,6 +49,7 @@ export function diagramHref(slug: string, name: string): string | null {
   const has =
     DIAGRAM_SLUGS.has(slug.toLowerCase()) ||
     DIAGRAM_NAMES.has(name) ||
-    /podcast|applify|skomp|solstice/i.test(`${slug} ${name}`)
+    // 'skomp' alone also matched skomp-forge, which has no diagram; keep the fallback narrow.
+    /podcast|applify|skomp-studio|skompxcel|solstice/i.test(`${slug} ${name}`)
   return has ? '/architecture' : null
 }
