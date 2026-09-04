@@ -123,6 +123,16 @@ function customToMerged(entry: ProjectEntryRow): MergedProject {
   }
 }
 
+// A repo whose work is already told by a curated CUSTOM entry. The projects
+// grid merges DB rows with a live GitHub fetch, so a fork under its own slug
+// otherwise renders a second, auto-generated card beside the curated one. Keyed
+// repo slug -> the custom slug that represents it; the skip applies only while
+// that custom entry is visible, so hiding the curated card brings the repo back
+// rather than losing both.
+const REPRESENTED_BY_CUSTOM: Record<string, string> = {
+  'zakat-eligibility-triage-n8n': 'zakat-eligibility-triage',
+}
+
 export function mergeProjects(
   githubRepos: GithubRepo[],
   dbEntries: ProjectEntryRow[]
@@ -145,6 +155,8 @@ export function mergeProjects(
   for (const repo of githubRepos) {
     // If a CUSTOM entry already claims this slug, skip the github-only row.
     if (customSlugs.has(repo.slug.toLowerCase())) continue
+    const representedBy = REPRESENTED_BY_CUSTOM[repo.slug.toLowerCase()]
+    if (representedBy && customSlugs.has(representedBy)) continue
     const override = overrideBySlug.get(repo.githubSlug.toLowerCase())
     if (override && !override.visible) continue
     if (override) matchedOverrideSlugs.add(override.githubSlug!.toLowerCase())
