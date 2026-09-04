@@ -1,6 +1,14 @@
 import { Container } from '@/components/Container'
 import { Reveal } from '@/components/home/Reveal'
+import { ScreenGallery, type Screen } from '@/components/home/ScreenGallery'
 import { buildMeta } from '@/lib/buildMeta'
+
+import mscToday from '@/images/showcase/mac-study-companion/01-today.jpg'
+import mscCourseMap from '@/images/showcase/mac-study-companion/02-course-map.jpg'
+import mscLectureNotes from '@/images/showcase/mac-study-companion/04-lecture-notes-receipts.jpg'
+import mscClaimLedger from '@/images/showcase/mac-study-companion/05-claim-ledger-withheld.jpg'
+import mscCardSealed from '@/images/showcase/mac-study-companion/06-mcq-sealed.jpg'
+import mscTutor from '@/images/showcase/mac-study-companion/08-tutor.jpg'
 
 export const metadata = buildMeta({
   title: 'Architecture',
@@ -27,8 +35,16 @@ const DIAGRAMS: Diagram[] = [
     blurb:
       'Every domain as a column, every shared platform drawn once as a capability band. Scan down a column to see what a project depends on; scan across a band to see who shares a platform. This is how five very different systems compose into one engine.',
     tech: [
-      'Claude Code', 'OpenAI gpt-4.1 / 4o / 5.1', 'Ollama / Whisper', 'Neon', 'RabbitMQ',
-      'Inngest', 'AWS', 'Vercel', 'Tailscale', 'Sentry',
+      'Claude Code',
+      'OpenAI gpt-4.1 / 4o / 5.1',
+      'Ollama / Whisper',
+      'Neon',
+      'RabbitMQ',
+      'Inngest',
+      'AWS',
+      'Vercel',
+      'Tailscale',
+      'Sentry',
     ],
   },
   {
@@ -38,9 +54,18 @@ const DIAGRAMS: Diagram[] = [
     blurb:
       'An always-on multi-agent operating system run by Claude Code. The orchestrator fans work out to custom Skills via the Agent tool; systemd-timed watchers spawn headless claude -p workers; a layered memory (session → project → vault) compounds research and ops. Local models on an RTX 3080 handle the free tier; the iOS bridge runs the Claude Agent SDK.',
     tech: [
-      'Claude Code', 'Claude Agent SDK', 'Skills', 'headless claude -p',
-      'MCP servers', 'systemd', 'Ollama (qwen2.5 / bge)', 'faster-whisper',
-      'LanceDB', 'FastAPI', 'arq + Redis', 'Tailscale',
+      'Claude Code',
+      'Claude Agent SDK',
+      'Skills',
+      'headless claude -p',
+      'MCP servers',
+      'systemd',
+      'Ollama (qwen2.5 / bge)',
+      'faster-whisper',
+      'LanceDB',
+      'FastAPI',
+      'arq + Redis',
+      'Tailscale',
     ],
   },
   {
@@ -50,8 +75,15 @@ const DIAGRAMS: Diagram[] = [
     blurb:
       'A polyglot, event-driven recording platform built for graduate distributed-systems work (CAS 735). Six services across Node and Python, each a hexagonal ports-and-adapters bounded context owning its own data, choreographed over a RabbitMQ topic exchange plus a dedicated work queue for FFmpeg media processing.',
     tech: [
-      'Next.js 16', 'Node / Express', 'Python / FastAPI', 'RabbitMQ',
-      'PostgreSQL', 'MinIO', 'FFmpeg', 'Docker Compose', 'hexagonal / DDD',
+      'Next.js 16',
+      'Node / Express',
+      'Python / FastAPI',
+      'RabbitMQ',
+      'PostgreSQL',
+      'MinIO',
+      'FFmpeg',
+      'Docker Compose',
+      'hexagonal / DDD',
     ],
   },
   {
@@ -61,8 +93,11 @@ const DIAGRAMS: Diagram[] = [
     blurb:
       'Four roles (member, instructor, admin, platform owner), each with distinct authentication and capabilities, gated through a single pipeline: role-scoped JWT → edge middleware → multi-tenant subdomain routing → app-level studio isolation. The isolation boundary is enforced in the data layer by a scoped-Prisma wrapper, not by database RLS.',
     tech: [
-      'NextAuth (JWT)', 'edge middleware', 'multi-tenant subdomains',
-      'scopedPrisma isolation', '4-role RBAC',
+      'NextAuth (JWT)',
+      'edge middleware',
+      'multi-tenant subdomains',
+      'scopedPrisma isolation',
+      '4-role RBAC',
     ],
   },
   {
@@ -72,8 +107,13 @@ const DIAGRAMS: Diagram[] = [
     blurb:
       'The same product traced by data movement: a synchronous request spine (booking, auth, card checkout) split cleanly from a durable, event-driven async tier (payment webhooks with HMAC verification, Inngest functions, scheduled cron, realtime push). One shared serverless Postgres, every row studio-scoped.',
     tech: [
-      'Next.js 16', 'Prisma 7', 'Neon', 'Square', 'Inngest',
-      'Vercel Cron', 'AWS SES / SNS / KMS / AppSync',
+      'Next.js 16',
+      'Prisma 7',
+      'Neon',
+      'Square',
+      'Inngest',
+      'Vercel Cron',
+      'AWS SES / SNS / KMS / AppSync',
     ],
   },
   {
@@ -83,8 +123,13 @@ const DIAGRAMS: Diagram[] = [
     blurb:
       'Engineer-built automation for an operations role: an email-triggered, fail-closed document pipeline. A systemd timer claims each thread exactly once via a Gmail-label state machine, spawns a detached Claude worker that validates or generates documents, writes a markdown ledger, and replies on the same thread. Idle cost is zero. (Genericized: no employer internals.)',
     tech: [
-      'Python', 'systemd', 'Gmail API (DWD)', 'fail-closed FSM',
-      'LibreOffice / PyMuPDF', 'FastAPI / arq', 'Tailscale',
+      'Python',
+      'systemd',
+      'Gmail API (DWD)',
+      'fail-closed FSM',
+      'LibreOffice / PyMuPDF',
+      'FastAPI / arq',
+      'Tailscale',
     ],
   },
   {
@@ -94,8 +139,12 @@ const DIAGRAMS: Diagram[] = [
     blurb:
       'A resume-tailoring ML product with paying users. A JWT-gated request enqueues a durable, step-checkpointed Inngest pipeline that drives the OpenAI Responses API with Zod-validated structured outputs. Shown sparse on purpose: only the publicly self-reported stack, nothing inferred.',
     tech: [
-      'Next.js 15', 'Inngest', 'OpenAI gpt-4.1 / 4o / 5.1 + Zod', 'Prisma 7',
-      'Stripe', 'Sentry',
+      'Next.js 15',
+      'Inngest',
+      'OpenAI gpt-4.1 / 4o / 5.1 + Zod',
+      'Prisma 7',
+      'Stripe',
+      'Sentry',
     ],
   },
 ]
@@ -111,6 +160,62 @@ const CLAUDE_STACK: string[] = [
   'Domain-tier policy gates',
   'Hooks & slash commands',
   'Multi-agent Workflows',
+]
+
+// Captures from the running system. Every frame label and caption describes
+// only what is visible on screen.
+const MSC_SCREENS: Screen[] = [
+  {
+    image: mscToday,
+    url: 'mac-study-companion / today',
+    caption:
+      'Today opens on one session and one problem, not the whole backlog.',
+    alt: "Mac Study Companion home screen showing today's review session and the next problem to work.",
+  },
+  {
+    image: mscCourseMap,
+    url: 'mac-study-companion / map',
+    caption:
+      'The course as a map of lectures and concepts, with where you are standing marked.',
+    alt: 'Course map showing lectures and concepts as connected nodes with their sealed claim counts.',
+  },
+  {
+    image: mscLectureNotes,
+    url: 'mac-study-companion / lecture notes',
+    caption:
+      'Each released sentence carries the stretch of lecture audio it came from.',
+    alt: 'Lecture notes page with a coverage bar and a ledger of sealed sentences, each showing its audio timestamp range.',
+  },
+  {
+    image: mscClaimLedger,
+    url: 'mac-study-companion / claim ledger',
+    caption:
+      'What the checker could not prove keeps its place, redacted, with the reason it was held.',
+    alt: 'Claim ledger showing withheld sentences redacted, each labelled with the reason it was held back.',
+  },
+  {
+    image: mscCardSealed,
+    url: 'mac-study-companion / cards',
+    caption:
+      'You commit to an answer before anything on screen tells you whether it is right.',
+    alt: 'A multiple choice card with an option selected and the reveal button not yet pressed, showing no correctness signal.',
+  },
+  {
+    image: mscTutor,
+    url: 'mac-study-companion / guidance',
+    caption:
+      'The tutor holds only the steps your own typed work has established, so it cannot hand over the rest.',
+    alt: 'Guidance view showing established steps along a pipeline and a tutor reply that asks a question instead of giving the answer.',
+  },
+]
+
+const MSC_STACK: string[] = [
+  'Z3',
+  'TLA+',
+  'FastAPI',
+  'Redis Streams',
+  'Next.js',
+  'DeBERTa NLI',
 ]
 
 function Eyebrow({ children }: { children: string }) {
@@ -196,13 +301,13 @@ export default function Architecture() {
         <Eyebrow>built on Claude Code</Eyebrow>
         <p className="max-w-3xl text-base text-zinc-300">
           The brain of the whole system is{' '}
-          <span className="text-ink-text">Claude Code</span>. The orchestrator is
-          an interactive Claude session that fans work out to custom Skills via
-          the Agent tool; email watchers spawn headless{' '}
+          <span className="text-ink-text">Claude Code</span>. The orchestrator
+          is an interactive Claude session that fans work out to custom Skills
+          via the Agent tool; email watchers spawn headless{' '}
           <span className="font-mono text-accent">claude -p</span> workers; the
           mobile bridge runs the Claude Agent SDK; MCP servers wire it into the
-          vaults. I build <span className="text-ink-text">with</span> Claude, not
-          just on top of a model API.
+          vaults. I build <span className="text-ink-text">with</span> Claude,
+          not just on top of a model API.
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
           {CLAUDE_STACK.map((t) => (
@@ -213,17 +318,67 @@ export default function Architecture() {
           These seven diagrams were generated and verified by Claude Code
           multi-agent workflows: one sub-agent authored and rendered each
           diagram, then independent agents audited it against the real codebase
-          and knowledge base for accuracy and reviewed the render for legibility.
-          This page was built by the system it documents.
+          and knowledge base for accuracy and reviewed the render for
+          legibility. This page was built by the system it documents.
         </p>
       </Reveal>
 
       {/* ── The gallery ──────────────────────────────────────────────────── */}
-      <div className="mt-16 space-y-20 pb-16">
+      <div className="mt-16 space-y-20">
         {DIAGRAMS.map((d) => (
           <DiagramFigure key={d.file} d={d} />
         ))}
       </div>
+
+      {/* ── The M.Eng project, shown in screens rather than a diagram ───────
+          The reveal lives on the blocks inside, not on the section. Reveal
+          fires at threshold 0.15, and a section holding six stacked full-width
+          captures is several viewports tall, so it could never reach that
+          ratio and would stay at opacity 0 forever. */}
+      <section className="relative mb-16 mt-16 overflow-hidden rounded-xl border border-accent/20 bg-ink-surface/40 p-6 sm:p-8">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-px"
+          style={{
+            background:
+              'linear-gradient(90deg, transparent, rgba(91,200,255,0.35), transparent)',
+          }}
+        />
+        <Reveal>
+          <Eyebrow>M.Eng research project</Eyebrow>
+          <h2 className="max-w-3xl text-2xl font-medium tracking-tight text-ink-text sm:text-3xl">
+            Verified study notes: the M.Eng project
+          </h2>
+          <p className="mt-5 max-w-3xl text-base text-zinc-400">
+            Mac Study Companion is my M.Eng Software Engineering research
+            project at McMaster, supervised by Dr. William Farmer and Dr.
+            Richard Paige. It turns lecture recordings into study notes with a
+            guarantee attached: every sentence it releases carries a citation
+            back to the minute of audio it came from, and any sentence the
+            checker cannot prove is held back in place with its reason shown,
+            never quietly dropped. A fail-closed release gate discharges the
+            per-response verification conditions in Z3, and the pipeline state
+            machine is model-checked in TLA+.
+          </p>
+        </Reveal>
+        <div className="mt-7">
+          <ScreenGallery screens={MSC_SCREENS} />
+        </div>
+        <p className="mt-7 max-w-3xl text-base text-zinc-300">
+          Every design decision traces to a 25-item evidence-graded ADHD
+          learning-design checklist distilled from the literature, in the spirit
+          of Nielsen&rsquo;s heuristics, and strict enough that it caught the
+          product&rsquo;s own quiz flow revealing correctness on the same click
+          as the pick, which was rebuilt into answer-then-reveal. Both
+          supervisors accepted the project in September 2026 as sufficient for
+          the degree.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {MSC_STACK.map((t) => (
+            <Chip key={t}>{t}</Chip>
+          ))}
+        </div>
+      </section>
     </Container>
   )
 }
