@@ -13,10 +13,15 @@ export type Screen = {
  * Landscape product captures in a browser-chrome frame, mirroring the frame
  * FramedVisual uses on /projects. Presentational and static: no tilt, no
  * hover motion, nothing that could shift layout.
+ *
+ * One per row on purpose. These are full three-pane desktop captures, and in a
+ * two-up grid they shrink to roughly a third of their native width, where the
+ * sealed badges, withheld reasons and map labels the captions describe stop
+ * being legible.
  */
 export function ScreenGallery({ screens }: { screens: Screen[] }) {
   return (
-    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+    <div className="flex flex-col gap-8">
       {screens.map((s) => (
         <figure key={s.caption}>
           <div className="overflow-hidden rounded-lg border border-white/10 bg-black/40">
@@ -33,7 +38,7 @@ export function ScreenGallery({ screens }: { screens: Screen[] }) {
                 src={s.image}
                 alt={s.alt}
                 fill
-                sizes="(min-width: 640px) 50vw, 100vw"
+                sizes="(min-width: 1024px) 1024px, 100vw"
                 className="object-cover object-top"
                 placeholder="blur"
               />
