@@ -16,7 +16,7 @@ import {
 } from 'react-icons/si'
 import { FaJava, FaLock, FaProjectDiagram } from 'react-icons/fa'
 import { HiOutlineCodeBracketSquare } from 'react-icons/hi2'
-import { FiServer, FiArrowUpRight } from 'react-icons/fi'
+import { FiServer, FiArrowUpRight, FiFileText } from 'react-icons/fi'
 import { LuBot, LuCalendarDays } from 'react-icons/lu'
 import { MdPhoneIphone } from 'react-icons/md'
 
@@ -26,7 +26,7 @@ import type { Project } from '@/lib/projects'
 import type { LanguageStat } from '@/lib/github'
 import type { ProjectLogo as ProjectLogoType } from '@/data/projects'
 import { TechConstellation } from './TechConstellation'
-import { screenshotFor, diagramHref } from './showcase'
+import { screenshotFor, diagramHref, detailHref } from './showcase'
 
 const PROJECT_ICONS: Record<string, any> = {
   ai: LuBot,
@@ -212,6 +212,7 @@ function FeaturedRecord({ project }: { project: Project }) {
   const status = deriveStatus(project)
   const image = screenshotFor(project.slug, project.name)
   const diagram = diagramHref(project.slug, project.name)
+  const detail = detailHref(project.slug)
   const { ref, tilt, onMove, onLeave } = useTilt()
   const href = project.link?.href
   const showGithub = project.github && project.github.includes('github.com')
@@ -268,6 +269,17 @@ function FeaturedRecord({ project }: { project: Project }) {
           <span className="font-mono text-xs text-ink-muted">no live link</span>
         )}
         <div className="flex items-center gap-3 text-ink-muted">
+          {detail && (
+            <a
+              href={detail}
+              className="inline-flex items-center gap-1 font-mono text-xs transition hover:text-accent"
+              aria-label="Open the project file"
+              title="Project file"
+            >
+              <FiFileText className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">file</span>
+            </a>
+          )}
           {diagram && (
             <a
               href={diagram}

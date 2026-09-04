@@ -81,7 +81,10 @@ export const projectOverrides: Record<string, ProjectOverride> = {
     name: 'Workout Tracking App',
     description:
       'Flutter fitness tracker using BLoC pattern, Firebase sync, and automated CI with GitHub Actions.',
-    link: { href: 'https://github.com/kianis4/workout_tracker', label: 'GitHub' },
+    link: {
+      href: 'https://github.com/kianis4/workout_tracker',
+      label: 'GitHub',
+    },
     logo: { type: 'icon', name: 'flutter', className: 'text-blue-400' },
     timeframe: 'Apr 2024 - Apr 2025',
     tech: ['Flutter', 'Dart', 'Firebase', 'BLoC'],
@@ -99,7 +102,10 @@ export const projectOverrides: Record<string, ProjectOverride> = {
     name: 'Portfolio Backend API',
     description:
       'Node/Express backend with JWT auth, GridFS media storage, and external API integrations for social feeds.',
-    link: { href: 'https://github.com/kianis4/Personal-CV-Backend', label: 'GitHub' },
+    link: {
+      href: 'https://github.com/kianis4/Personal-CV-Backend',
+      label: 'GitHub',
+    },
     logo: { type: 'icon', name: 'node', className: 'text-emerald-600' },
     timeframe: 'May 2023 - Apr 2025',
     tech: ['Node.js', 'Express.js', 'MongoDB', 'JWT'],
@@ -107,7 +113,7 @@ export const projectOverrides: Record<string, ProjectOverride> = {
   'kianis4/saftey-net': {
     name: 'Crime Analysis System',
     description:
-      'Desktop app analyzing NYC crime data with spatial insights and safest-path routing using Dijkstra\'s algorithm.',
+      "Desktop app analyzing NYC crime data with spatial insights and safest-path routing using Dijkstra's algorithm.",
     link: { href: 'https://github.com/kianis4/Saftey-Net', label: 'GitHub' },
     logo: { type: 'icon', name: 'java', className: 'text-blue-700' },
     timeframe: 'Mar 2023 - Apr 2025',
@@ -135,7 +141,10 @@ export const projectOverrides: Record<string, ProjectOverride> = {
     name: 'AI Coding Interview Platform',
     description:
       'Generative AI interview simulator with GPT-4 prompts, Docker sandbox execution, and chat UX.',
-    link: { href: 'https://github.com/kianis4/SKompXcel-AI-Code-Mentor', label: 'GitHub' },
+    link: {
+      href: 'https://github.com/kianis4/SKompXcel-AI-Code-Mentor',
+      label: 'GitHub',
+    },
     logo: { type: 'icon', name: 'openai', className: 'text-green-500' },
     timeframe: 'Feb 2025',
     tech: ['TypeScript', 'Next.js', 'Node.js', 'OpenAI GPT-4'],
@@ -144,7 +153,10 @@ export const projectOverrides: Record<string, ProjectOverride> = {
     name: 'Calendar Application',
     description:
       'Personal calendar for daily reflections powered by Next.js, TypeScript, and React Calendar.',
-    link: { href: 'https://github.com/kianis4/birthday-calendar', label: 'GitHub' },
+    link: {
+      href: 'https://github.com/kianis4/birthday-calendar',
+      label: 'GitHub',
+    },
     logo: { type: 'icon', name: 'calendar', className: 'text-indigo-600' },
     timeframe: 'Dec 2024',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
@@ -153,7 +165,10 @@ export const projectOverrides: Record<string, ProjectOverride> = {
     name: 'iOS Overload Management',
     description:
       'UIKit app for system load optimization using MVVM, Alamofire networking, and Core Data persistence.',
-    link: { href: 'https://github.com/kianis4/overload-pro-ios', label: 'GitHub' },
+    link: {
+      href: 'https://github.com/kianis4/overload-pro-ios',
+      label: 'GitHub',
+    },
     logo: { type: 'icon', name: 'swift', className: 'text-orange-500' },
     timeframe: 'Feb 2025',
     tech: ['Swift', 'UIKit', 'Core Data', 'MVVM'],
@@ -162,7 +177,10 @@ export const projectOverrides: Record<string, ProjectOverride> = {
     name: 'Bigram Language Model',
     description:
       'Character-level PyTorch model with custom sampling and negative log-likelihood training.',
-    link: { href: 'https://github.com/kianis4/torch-bigram-language-model', label: 'GitHub' },
+    link: {
+      href: 'https://github.com/kianis4/torch-bigram-language-model',
+      label: 'GitHub',
+    },
     logo: { type: 'icon', name: 'python', className: 'text-yellow-600' },
     timeframe: 'Jan 2025',
     tech: ['PyTorch', 'Tensor Operations', 'Model Training'],
@@ -171,7 +189,10 @@ export const projectOverrides: Record<string, ProjectOverride> = {
     name: 'Neural Network Framework',
     description:
       'Educational framework recreating Micrograd with automatic differentiation and gradient computation.',
-    link: { href: 'https://github.com/kianis4/-neural-networks-zero-to-hero', label: 'GitHub' },
+    link: {
+      href: 'https://github.com/kianis4/-neural-networks-zero-to-hero',
+      label: 'GitHub',
+    },
     logo: { type: 'icon', name: 'ai', className: 'text-blue-600' },
     timeframe: 'Jan 2025',
     tech: ['Python', 'Jupyter Notebook', 'Micrograd'],
@@ -180,7 +201,10 @@ export const projectOverrides: Record<string, ProjectOverride> = {
     name: 'Fitness Tracking App',
     description:
       'SwiftUI application for progressive overload tracking with Core Data storage and Combine async flows.',
-    link: { href: 'https://github.com/kianis4/ProgressiveOverloadApp', label: 'GitHub' },
+    link: {
+      href: 'https://github.com/kianis4/ProgressiveOverloadApp',
+      label: 'GitHub',
+    },
     logo: { type: 'icon', name: 'mobile', className: 'text-red-600' },
     timeframe: 'Oct 2024',
     tech: ['Swift', 'SwiftUI', 'Core Data', 'Combine'],
@@ -214,6 +238,34 @@ export interface CustomProject {
 
 export const customProjects: CustomProject[] = [
   {
+    slug: 'zakat-eligibility-triage',
+    name: 'Zakat-Eligibility Triage',
+    description:
+      'An AI triage agent for crowdfunding campaigns that does everything except decide. It reads a campaign, assembles the evidence a zakat determination turns on, quotes the organizer in their own words at exact character offsets, names what is missing or contested, refuses when the text cannot carry a determination, and hands the file to a qualified human reviewer. It never issues a ruling. Two model calls with structured outputs, byte-checked quotes, a deterministic four-rule refusal, human-only outcomes enforced by Postgres CHECK constraints, and an n8n layer that owns the clock and the megaphone while the code owns the rules.',
+    link: {
+      href: 'https://zakat-eligibility-triage-n8n.vercel.app',
+      label: 'zakat-eligibility-triage-n8n.vercel.app',
+    },
+    logo: { type: 'image', src: '/ZakatTriage.svg' },
+    timeframe: 'Aug - Sep 2026',
+    tech: [
+      'Next.js',
+      'TypeScript',
+      'Drizzle',
+      'Postgres (Neon)',
+      'pgvector',
+      'Vercel AI SDK',
+      'claude-sonnet-5',
+      'n8n',
+    ],
+    featured: true,
+    priority: 0,
+    badges: ['Flagship', 'Human-in-the-loop'],
+    source: 'custom',
+    visibility: 'public',
+    github: 'https://github.com/kianis4/zakat-eligibility-triage',
+  },
+  {
     slug: 'skomp-studio',
     name: 'Skomp Studio',
     description:
@@ -245,7 +297,10 @@ export const customProjects: CustomProject[] = [
     name: 'PodcastHub',
     description:
       'Event-driven microservices platform for remote multi-guest podcast recording and broadcast-grade mastering, extended with an automated post-production and publishing pipeline. Six services communicate over a RabbitMQ topic exchange with dead-letter queues, each built on a hexagonal architecture. WebRTC captures multi-track audio, uploaded to object storage in checksummed chunks. FFmpeg masters the result with EBU R128 loudness normalization and multi-track mixing, driven by an event-driven session state machine. faster-whisper produces word-level timestamps; AI generates show notes, chapters, and titles with a deterministic fallback; RSS 2.0 feeds handle distribution. Verified end-to-end against a Docker Compose stack.',
-    link: { href: 'https://github.com/kianis4/CAS-735-PodcastHub', label: 'GitHub' },
+    link: {
+      href: 'https://github.com/kianis4/CAS-735-PodcastHub',
+      label: 'GitHub',
+    },
     logo: { type: 'image', src: '/PodcastHub.svg' },
     timeframe: '2025 - Present',
     tech: [
@@ -314,7 +369,10 @@ export const customProjects: CustomProject[] = [
     name: 'Evergreen Renos',
     description:
       'Operations portal for renovation business improving customer experience and project management.',
-    link: { href: 'https://www.evergreenrenos.ca/', label: 'evergreenrenos.ca' },
+    link: {
+      href: 'https://www.evergreenrenos.ca/',
+      label: 'evergreenrenos.ca',
+    },
     logo: { type: 'icon', name: 'chrome', className: 'text-green-600' },
     timeframe: '2023',
     tech: ['Web Development', 'CMS', 'Project Management'],
@@ -325,8 +383,11 @@ export const customProjects: CustomProject[] = [
     slug: 'mac-study-companion',
     name: 'Mac Study Companion',
     description:
-      'M.Eng Software Engineering research project at McMaster, supervised by Dr. William Farmer and Dr. Richard Paige. A study companion built for students with ADHD that turns lecture recordings into verified study notes: every released sentence cites the minute of audio it came from, and any sentence the checker cannot prove is visibly held back with its reason shown, never silently dropped. A fail-closed release gate discharges per-response verification conditions in Z3 (completeness, support gating, non-interference, a citation-recall floor), and the pipeline state machine is model-checked in TLA+. The Socratic tutor is given only the solution steps the student\'s own typed work has demonstrated, so it cannot reveal an answer it was never told. Nine Python FastAPI microservices, hexagonal ports and adapters, over a Redis Streams bus. On a 58-minute MIT lecture the gate released 23 of 29 generated claims and held back 6 with their reasons.',
-    link: { href: 'https://github.com/kianis4/Mac-Study-Buddy', label: 'GitHub' },
+      "M.Eng Software Engineering research project at McMaster, supervised by Dr. William Farmer and Dr. Richard Paige. A study companion built for students with ADHD that turns lecture recordings into verified study notes: every released sentence cites the minute of audio it came from, and any sentence the checker cannot prove is visibly held back with its reason shown, never silently dropped. A fail-closed release gate discharges per-response verification conditions in Z3 (completeness, support gating, non-interference, a citation-recall floor), and the pipeline state machine is model-checked in TLA+. The Socratic tutor is given only the solution steps the student's own typed work has demonstrated, so it cannot reveal an answer it was never told. Nine Python FastAPI microservices, hexagonal ports and adapters, over a Redis Streams bus. On a 58-minute MIT lecture the gate released 23 of 29 generated claims and held back 6 with their reasons.",
+    link: {
+      href: 'https://github.com/kianis4/Mac-Study-Buddy',
+      label: 'GitHub',
+    },
     logo: { type: 'image', src: '/MacStudyCompanion.svg' },
     timeframe: '2026',
     tech: [
@@ -344,7 +405,7 @@ export const customProjects: CustomProject[] = [
       'Docker',
     ],
     featured: true,
-    priority: 2,
+    priority: 1,
     badges: ['M.Eng research', 'Formal verification'],
     source: 'custom',
     visibility: 'public',
