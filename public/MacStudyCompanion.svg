@@ -1,0 +1,7 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mac Study Companion">
+  <circle cx="24" cy="24" r="19" stroke="#5BC8FF" stroke-width="2" stroke-opacity="0.5"/>
+  <path d="M16 30 L24 18 L32 29 Z" stroke="#5BC8FF" stroke-width="1.5" stroke-opacity="0.4" stroke-linejoin="round" fill="none"/>
+  <circle cx="24" cy="18" r="4" fill="#E8B84B"/>
+  <circle cx="16" cy="30" r="3" fill="#5BC8FF"/>
+  <circle cx="32" cy="29" r="3" fill="#5BC8FF"/>
+</svg>

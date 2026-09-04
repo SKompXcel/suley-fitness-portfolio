@@ -1,6 +1,14 @@
 import { Container } from '@/components/Container'
 import { Reveal } from '@/components/home/Reveal'
+import { ScreenGallery, type Screen } from '@/components/home/ScreenGallery'
 import { buildMeta } from '@/lib/buildMeta'
+
+import mscToday from '@/images/showcase/mac-study-companion/01-today.jpg'
+import mscCourseMap from '@/images/showcase/mac-study-companion/02-course-map.jpg'
+import mscLectureNotes from '@/images/showcase/mac-study-companion/04-lecture-notes-receipts.jpg'
+import mscClaimLedger from '@/images/showcase/mac-study-companion/05-claim-ledger-withheld.jpg'
+import mscCardSealed from '@/images/showcase/mac-study-companion/06-mcq-sealed.jpg'
+import mscTutor from '@/images/showcase/mac-study-companion/08-tutor.jpg'
 
 export const metadata = buildMeta({
   title: 'Architecture',
@@ -113,6 +121,56 @@ const CLAUDE_STACK: string[] = [
   'Multi-agent Workflows',
 ]
 
+// Captures from the running system. Every frame label and caption describes
+// only what is visible on screen.
+const MSC_SCREENS: Screen[] = [
+  {
+    image: mscToday,
+    url: 'mac-study-companion / today',
+    caption: 'Today opens on one session and one problem, not the whole backlog.',
+    alt: "Mac Study Companion home screen showing today's review session and the next problem to work.",
+  },
+  {
+    image: mscCourseMap,
+    url: 'mac-study-companion / map',
+    caption: 'The course as a map of lectures and concepts, with where you are standing marked.',
+    alt: 'Course map showing lectures and concepts as connected nodes with their sealed claim counts.',
+  },
+  {
+    image: mscLectureNotes,
+    url: 'mac-study-companion / lecture notes',
+    caption: 'Each released sentence carries the stretch of lecture audio it came from.',
+    alt: 'Lecture notes page with a coverage bar and a ledger of sealed sentences, each showing its audio timestamp range.',
+  },
+  {
+    image: mscClaimLedger,
+    url: 'mac-study-companion / claim ledger',
+    caption: 'What the checker could not prove keeps its place, redacted, with the reason it was held.',
+    alt: 'Claim ledger showing withheld sentences redacted, each labelled with the reason it was held back.',
+  },
+  {
+    image: mscCardSealed,
+    url: 'mac-study-companion / cards',
+    caption: 'You commit to an answer before anything on screen tells you whether it is right.',
+    alt: 'A multiple choice card with an option selected and the reveal button not yet pressed, showing no correctness signal.',
+  },
+  {
+    image: mscTutor,
+    url: 'mac-study-companion / guidance',
+    caption: 'The tutor holds only the steps your own typed work has established, so it cannot hand over the rest.',
+    alt: 'Guidance view showing established steps along a pipeline and a tutor reply that asks a question instead of giving the answer.',
+  },
+]
+
+const MSC_STACK: string[] = [
+  'Z3',
+  'TLA+',
+  'FastAPI',
+  'Redis Streams',
+  'Next.js',
+  'DeBERTa NLI',
+]
+
 function Eyebrow({ children }: { children: string }) {
   return <p className="mb-5 font-mono text-sm text-accent">{children}</p>
 }
@@ -219,11 +277,58 @@ export default function Architecture() {
       </Reveal>
 
       {/* ── The gallery ──────────────────────────────────────────────────── */}
-      <div className="mt-16 space-y-20 pb-16">
+      <div className="mt-16 space-y-20">
         {DIAGRAMS.map((d) => (
           <DiagramFigure key={d.file} d={d} />
         ))}
       </div>
+
+      {/* ── The M.Eng project, shown in screens rather than a diagram ─────── */}
+      <Reveal
+        as="section"
+        className="relative mt-16 mb-16 overflow-hidden rounded-xl border border-accent/20 bg-ink-surface/40 p-6 sm:p-8"
+      >
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 top-0 h-px"
+          style={{
+            background:
+              'linear-gradient(90deg, transparent, rgba(91,200,255,0.35), transparent)',
+          }}
+        />
+        <Eyebrow>M.Eng research project</Eyebrow>
+        <h2 className="max-w-3xl text-2xl font-medium tracking-tight text-ink-text sm:text-3xl">
+          Verified study notes: the M.Eng project
+        </h2>
+        <p className="mt-5 max-w-3xl text-base text-zinc-400">
+          Mac Study Companion is my M.Eng Software Engineering research project
+          at McMaster, supervised by Dr. William Farmer and Dr. Richard Paige. It
+          turns lecture recordings into study notes with a guarantee attached:
+          every sentence it releases carries a citation back to the minute of
+          audio it came from, and any sentence the checker cannot prove is held
+          back in place with its reason shown, never quietly dropped. A
+          fail-closed release gate discharges the per-response verification
+          conditions in Z3, and the pipeline state machine is model-checked in
+          TLA+.
+        </p>
+        <div className="mt-7">
+          <ScreenGallery screens={MSC_SCREENS} />
+        </div>
+        <p className="mt-7 max-w-3xl text-base text-zinc-300">
+          Every design decision traces to a 25-item evidence-graded ADHD
+          learning-design checklist distilled from the literature, in the spirit
+          of Nielsen&rsquo;s heuristics, and strict enough that it caught the
+          product&rsquo;s own quiz flow revealing correctness on the same click
+          as the pick, which was rebuilt into answer-then-reveal. Both
+          supervisors accepted the project in September 2026 as sufficient for
+          the degree.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {MSC_STACK.map((t) => (
+            <Chip key={t}>{t}</Chip>
+          ))}
+        </div>
+      </Reveal>
     </Container>
   )
 }
