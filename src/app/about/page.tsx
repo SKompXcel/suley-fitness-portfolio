@@ -42,18 +42,26 @@ type Ship = {
 
 const SHIPS: Ship[] = [
   {
+    name: 'mac-study-companion',
+    outcome: 'M.Eng research: study notes that cannot make things up.',
+    detail:
+      'A virtual TA for students with ADHD. Lecture recordings become study notes where every released sentence cites the minute of audio it came from, and any sentence the checker cannot prove is held back in place with its reason shown. A fail-closed release gate discharges the verification conditions in Z3; the pipeline state machine is model-checked in TLA+; the Socratic tutor is given only the steps the student has demonstrated, so it cannot reveal an answer it was never told. Nine FastAPI services over a Redis Streams bus. Accepted by both supervisors in September 2026.',
+    href: 'https://github.com/kianis4/Mac-Study-Buddy',
+    linkLabel: 'github.com/kianis4',
+  },
+  {
     name: 'mike-ross-ai',
     outcome: 'Agentic legal RAG: cited Canadian-law answers.',
     detail:
-      'A LangGraph state machine runs hybrid vector retrieval over 16,000+ legal documents (MongoDB Atlas) with a Gemini 2.0 Flash reasoning core, returning schema-validated, section-cited answers that block hallucination. FastAPI + Next.js, streamed over SSE. Built for Delta Hacks 12.',
+      'A LangGraph state machine runs hybrid vector retrieval over a 16,000-chunk corpus of seven federal and provincial statutes (MongoDB Atlas) with a Gemini 2.0 Flash reasoning core, returning schema-validated, section-cited answers that block hallucination. FastAPI + Next.js, streamed over SSE. Built for Delta Hacks 12.',
     href: 'https://mike-ross.ca/',
     linkLabel: 'mike-ross.ca',
   },
   {
-    name: 'skomp-studio',
-    outcome: 'Multi-tenant SaaS running a pilates studio.',
+    name: 'incite',
+    outcome: 'White-label studio platform running a real business.',
     detail:
-      'Class booking, waitlists, Square payments for a studio that ran on paper. Row-level tenant isolation, a ~790-test Vitest suite and a Playwright e2e gate every release.',
+      'Booking, waitlists, memberships and Square payments for studios that ran on paper. Tenant isolation enforced in the data layer by a scoped Prisma client, 59 data models across 172 API routes, and a suite of more than 5,000 tests with Playwright end-to-end runs as a required check on every release. Solstice Pilates runs its entire operation on it.',
     href: 'https://skomp.studio/',
     linkLabel: 'skomp.studio',
   },
@@ -84,7 +92,10 @@ const STACK = [
   'neon',
   'postgres',
   'fastapi',
+  'redis',
   'langgraph',
+  'z3',
+  'tla+',
   'aws',
   'vercel',
 ]
@@ -132,17 +143,26 @@ function SocialLine({
 export default function About() {
   return (
     <Container className="mt-16 overflow-x-clip sm:mt-32">
-      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-[20rem_1fr] lg:gap-x-16">
+      {/* The prose takes the flexible column and the dossier rail the fixed one.
+          Reversing these puts the body in the 20rem track, which squeezes every
+          paragraph into a narrow ribbon and leaves the right half of a desktop
+          window empty next to a 24rem card. */}
+      <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-x-16">
         {/* Operator dossier rail — the signature graphic */}
-        <div className="lg:order-last lg:sticky lg:top-28 lg:h-fit">
+        <div className="lg:sticky lg:top-28 lg:order-last lg:h-fit">
           <Reveal className="flex flex-col items-center lg:items-start">
             <OperatorPortrait image={portraitImage} />
 
             <div className="mt-6 w-full max-w-xs sm:max-w-sm">
               <div className="rounded-xl border border-ink-border bg-ink-surface/30 p-4">
-                <div className="font-mono text-[11px] text-accent/70">~/contact</div>
+                <div className="font-mono text-[11px] text-accent/70">
+                  ~/contact
+                </div>
                 <div className="mt-3 flex flex-col gap-3">
-                  <SocialLine href="https://github.com/kianis4/" icon={GitHubIcon}>
+                  <SocialLine
+                    href="https://github.com/kianis4/"
+                    icon={GitHubIcon}
+                  >
                     GitHub
                   </SocialLine>
                   <SocialLine
@@ -151,8 +171,14 @@ export default function About() {
                   >
                     LinkedIn
                   </SocialLine>
-                  <SocialLine href="mailto:suley.kiani@outlook.com" icon={MailIcon}>
+                  <SocialLine
+                    href="mailto:suley.kiani@outlook.com"
+                    icon={MailIcon}
+                  >
                     suley.kiani@outlook.com
+                  </SocialLine>
+                  <SocialLine href="mailto:kianis4@mcmaster.ca" icon={MailIcon}>
+                    kianis4@mcmaster.ca
                   </SocialLine>
                 </div>
               </div>
@@ -185,16 +211,26 @@ export default function About() {
                 Capital, currently at 200% of monthly quota, where I have also
                 shipped multiple internal automation and AI tools in production.
                 Alongside that I run two production products with paying users.
-                I am completing an MEng in Computing &amp; Software at McMaster,
-                expected Dec 2026, with A+ grades in type theory and
-                microservices.
+              </p>
+              <p className="mt-5 max-w-2xl text-base text-zinc-300">
+                My MEng in Computing &amp; Software at McMaster is research
+                complete: Dr. William Farmer and Dr. Richard Paige reviewed the
+                running system in September 2026 and closed the build as
+                sufficient for the degree, leaving the written report as the
+                work that remains. The project is Mac Study Companion, below. A+
+                grades in simple type theory and microservices.
               </p>
               <p className="mt-5 max-w-2xl text-base text-zinc-300">
                 Off the clock I built my own JARVIS: a personal multi-agent
-                operating system I run across my machines. It watches itself,
-                recovers from failures behind fail-closed gates, and compounds
-                my research and ops into a layered memory, the engineering and
-                the finance feeding each other.
+                operating system I run across my own machines. Scheduled jobs
+                and email-triggered workers carry out agent tasks on a private
+                mesh, each one sandboxed behind a fail-closed egress allowlist
+                so an untrusted inbound document never reaches a credential.
+                Work that dies mid-flight is re-driven a bounded number of times
+                and then parked for a human rather than retried forever, a
+                dead-man switch watches the health monitor itself, and a local
+                model answers over my own notes with citations. The engineering
+                and the finance feed each other.
               </p>
             </Reveal>
 
