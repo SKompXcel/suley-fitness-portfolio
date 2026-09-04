@@ -199,6 +199,46 @@ describe('mergeProjects', () => {
     expect(result[0].description).toBe('curated custom description')
   })
 
+  it('drops a github repo that a visible CUSTOM entry already represents', () => {
+    const fork: GithubRepo = {
+      ...githubRepo,
+      slug: 'zakat-eligibility-triage-n8n',
+      githubSlug: 'kianis4/zakat-eligibility-triage-n8n',
+      name: 'Zakat Eligibility Triage N8n',
+    }
+    const flagship: ProjectEntryRow = {
+      ...baseOverride,
+      id: 'c-zakat',
+      slug: 'zakat-eligibility-triage',
+      source: 'CUSTOM',
+      githubSlug: null,
+      name: 'Zakat-Eligibility Triage',
+    }
+    const result = mergeProjects([fork], [flagship])
+    expect(result).toHaveLength(1)
+    expect(result[0].slug).toBe('zakat-eligibility-triage')
+  })
+
+  it('keeps the represented repo when its CUSTOM entry is hidden, so neither card is lost', () => {
+    const fork: GithubRepo = {
+      ...githubRepo,
+      slug: 'zakat-eligibility-triage-n8n',
+      githubSlug: 'kianis4/zakat-eligibility-triage-n8n',
+      name: 'Zakat Eligibility Triage N8n',
+    }
+    const hiddenFlagship: ProjectEntryRow = {
+      ...baseOverride,
+      id: 'c-zakat',
+      slug: 'zakat-eligibility-triage',
+      source: 'CUSTOM',
+      githubSlug: null,
+      visible: false,
+    }
+    const result = mergeProjects([fork], [hiddenFlagship])
+    expect(result).toHaveLength(1)
+    expect(result[0].slug).toBe('zakat-eligibility-triage-n8n')
+  })
+
   it('handles string dates from cache (not just Date objects)', () => {
     const custom = {
       ...baseOverride,
