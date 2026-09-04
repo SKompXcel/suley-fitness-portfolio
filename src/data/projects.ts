@@ -214,6 +214,34 @@ export interface CustomProject {
 
 export const customProjects: CustomProject[] = [
   {
+    slug: 'zakat-eligibility-triage',
+    name: 'Zakat-Eligibility Triage',
+    description:
+      'An AI triage agent for crowdfunding campaigns that does everything except decide. It reads a campaign, assembles the evidence a zakat determination turns on, quotes the organizer in their own words at exact character offsets, names what is missing or contested, refuses when the text cannot carry a determination, and hands the file to a qualified human reviewer. It never issues a ruling. Two model calls with structured outputs, byte-checked quotes, a deterministic four-rule refusal, human-only outcomes enforced by Postgres CHECK constraints, and an n8n layer that owns the clock and the megaphone while the code owns the rules.',
+    link: {
+      href: 'https://zakat-eligibility-triage-n8n.vercel.app',
+      label: 'zakat-eligibility-triage-n8n.vercel.app',
+    },
+    logo: { type: 'image', src: '/ZakatTriage.svg' },
+    timeframe: 'Aug - Sep 2026',
+    tech: [
+      'Next.js',
+      'TypeScript',
+      'Drizzle',
+      'Postgres (Neon)',
+      'pgvector',
+      'Vercel AI SDK',
+      'claude-sonnet-5',
+      'n8n',
+    ],
+    featured: true,
+    priority: 0,
+    badges: ['Flagship', 'Human-in-the-loop'],
+    source: 'custom',
+    visibility: 'public',
+    github: 'https://github.com/kianis4/zakat-eligibility-triage',
+  },
+  {
     slug: 'skomp-studio',
     name: 'Skomp Studio',
     description:

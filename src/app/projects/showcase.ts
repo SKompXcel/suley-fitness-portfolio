@@ -3,13 +3,24 @@ import type { StaticImageData } from 'next/image'
 import solstice from '@/images/showcase/solstice.png'
 import applify from '@/images/showcase/applify.png'
 import skompxcel from '@/images/showcase/skompxcel.png'
+import zakatTriage from '@/images/showcase/zakat-triage/agent-file.jpg'
 
-// Map a project slug to its real captured product screenshot. Only the four
+// Map a project slug to its real captured product screenshot. Only the
 // projects with real captures get a frame; everything else renders a HUD
 // placeholder. No fabricated imagery.
 const BY_SLUG: Record<string, StaticImageData> = {
   'skomp-studio': solstice,
   skompxcel,
+  'zakat-eligibility-triage': zakatTriage,
+}
+
+// Projects with a dedicated page on this site. The card links to it as "file".
+const DETAIL_BY_SLUG: Record<string, string> = {
+  'zakat-eligibility-triage': '/projects/zakat-triage',
+}
+
+export function detailHref(slug: string): string | null {
+  return DETAIL_BY_SLUG[slug.toLowerCase()] ?? null
 }
 
 const BY_NAME: Record<string, StaticImageData> = {
