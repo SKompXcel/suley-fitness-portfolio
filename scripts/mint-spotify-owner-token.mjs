@@ -111,7 +111,7 @@ const server = http.createServer(async (req, res) => {
   console.log('  SPOTIFY_REFRESH_TOKEN=' + data.refresh_token)
   console.log('\n  Scopes granted: ' + (data.scope || SCOPES))
   console.log('\n  Next: set this as SPOTIFY_REFRESH_TOKEN in Vercel (Production)')
-  console.log('  for the suley-fitness-portfolio-fnv6 project, then redeploy.\n')
+  console.log('  for the suleyman.io project (the one serving www.suleyman.io), then redeploy.\n')
   server.close()
   process.exit(0)
 })
