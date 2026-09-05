@@ -7,11 +7,25 @@ datasource db {
 }
 
 model AdminUser {
-  id           String   @id @default(cuid())
-  email        String   @unique
+  id           String         @id @default(cuid())
+  email        String         @unique
   passwordHash String
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  passkeys     AdminPasskey[]
+}
+
+model AdminPasskey {
+  id           String    @id @default(cuid())
+  credentialId String    @unique
+  publicKey    String
+  counter      Int       @default(0)
+  transports   String?
+  label        String
+  createdAt    DateTime  @default(now())
+  lastUsedAt   DateTime?
+  adminUserId  String
+  adminUser    AdminUser @relation(fields: [adminUserId], references: [id])
 }
 
 enum PostStatus {

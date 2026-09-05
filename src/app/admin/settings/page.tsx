@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getAllSettings } from '@/lib/siteSettings'
 import { SettingsForm } from '@/components/admin/SettingsForm'
+import { PasskeysCard } from '@/components/admin/PasskeysCard'
 
 export const dynamic = 'force-dynamic'
 
@@ -28,6 +29,8 @@ export default async function AdminSettingsPage() {
         </header>
 
         <SettingsForm initial={settings} />
+
+        <PasskeysCard />
       </div>
     </div>
   )
