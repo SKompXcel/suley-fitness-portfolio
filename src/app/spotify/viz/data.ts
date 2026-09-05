@@ -30,13 +30,23 @@ function releaseYear(album: any): number | undefined {
   return Number.isFinite(y) ? y : undefined
 }
 
+// Spotify sorts `images` largest -> smallest; taking the LAST entry served the
+// 64px thumbnail, which reads as mush in a ~170px card on a retina display.
+// Pick the smallest variant that still covers 2x density, else the largest.
+function coverUrl(images: any[] | undefined, minWidth = 300): string | undefined {
+  if (!images?.length) return undefined
+  const bigEnough = images.filter((i) => (i?.width ?? 0) >= minWidth)
+  const pick = bigEnough.length ? bigEnough[bigEnough.length - 1] : images[0]
+  return pick?.url
+}
+
 function toRankedArtist(a: any, i: number): RankedArtist {
   return {
     id: a.id,
     name: a.name,
     rank: i + 1,
     genres: a.genres ?? [],
-    image: a.images?.[a.images.length - 1]?.url ?? a.images?.[0]?.url,
+    image: coverUrl(a.images),
     url: a.external_urls?.spotify,
   }
 }
@@ -48,7 +58,7 @@ function toRankedTrack(t: any, i: number): RankedTrack {
     artist: (t.artists ?? []).map((x: any) => x.name).join(', '),
     rank: i + 1,
     releaseYear: releaseYear(t.album),
-    image: t.album?.images?.[t.album.images.length - 1]?.url ?? t.album?.images?.[0]?.url,
+    image: coverUrl(t.album?.images),
     url: t.external_urls?.spotify,
   }
 }
@@ -217,7 +227,7 @@ export async function ownerRecentlyPlayed(limit = 30): Promise<RecentPlay[]> {
     playedAt: p.played_at,
     name: p.track?.name,
     artist: (p.track?.artists ?? []).map((x: any) => x.name).join(', '),
-    image: p.track?.album?.images?.[p.track.album.images.length - 1]?.url ?? p.track?.album?.images?.[0]?.url,
+    image: coverUrl(p.track?.album?.images),
     url: p.track?.external_urls?.spotify,
   }))
 }
