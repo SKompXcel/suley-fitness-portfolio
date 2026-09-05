@@ -17,6 +17,11 @@ import { Reveal } from '@/components/home/Reveal'
 import { buildMeta } from '@/lib/buildMeta'
 import { getSystemTelemetry } from '@/lib/systemTelemetry'
 
+// The telemetry snapshot arrives by server push every 30 minutes; without a
+// revalidate window this page is fully static and would bake the offline state
+// at build time forever. ISR at the push cadence keeps it honest and cheap.
+export const revalidate = 1800
+
 export const metadata = buildMeta({
   title: 'Suleyman Kiani | Home',
   description:
