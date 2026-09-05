@@ -1,5 +1,5 @@
 {
-  "name": "tailwindui-template",
+  "name": "suleyman-io",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -22,15 +22,9 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.2",
     "@headlessui/react": "^2.2.9",
-    "@mapbox/rehype-prism": "^0.7.0",
-    "@mdx-js/loader": "^2.1.5",
-    "@mdx-js/react": "^2.1.5",
     "@neondatabase/serverless": "^1.1.0",
-    "@next/mdx": "^16.1.1",
     "@prisma/adapter-neon": "^7.7.0",
     "@prisma/client": "^7.7.0",
-    "@supabase/auth-helpers-nextjs": "^0.10.0",
-    "@supabase/supabase-js": "^2.80.0",
     "@tailwindcss/typography": "^0.5.4",
     "@vercel/analytics": "^1.5.0",
     "@vercel/blob": "^2.3.3",
