@@ -68,7 +68,7 @@ fences, math coherence) before shipping. Proven pattern: 2026-06-12, two rounds.
   balance sort, weights from a six-year delinquency history (18,699-contract
   delinquent-ever population), scorer reproduces 1,023/1,023 rows in plain Excel,
   APPROVED FOR LAUNCH by the business 2026-08-18**, **quoting tool: 14 manufacturers,
-  13 replaced Excel calculators, 450 automated tests**, **validator: 1-2 hour first
+  13 replaced Excel calculators, a 1,396-test suite (runner-counted 2026-09-05: 1,370 passing, 4 expected-fail, 22 skipped)**, **validator: 1-2 hour first
   pass to about a minute, 50-package evaluation suite**, 2,900+ Solstice tests, **$40K+
   CAD processed since launch** (owner-confirmed 2026-06-12), 100+ learners, shadow-DB
   migration checks, Gitleaks CI.
