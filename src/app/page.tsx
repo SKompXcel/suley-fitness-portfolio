@@ -15,6 +15,7 @@ import { ExperienceList } from '@/components/home/ExperienceList'
 import { EducationLedger } from '@/components/home/EducationLedger'
 import { Reveal } from '@/components/home/Reveal'
 import { buildMeta } from '@/lib/buildMeta'
+import { getSystemTelemetry } from '@/lib/systemTelemetry'
 
 export const metadata = buildMeta({
   title: 'Suleyman Kiani | Home',
@@ -31,8 +32,13 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
   )
 }
 
-export default function Home() {
+export default async function Home() {
+  // Statically rendered: the snapshot, the deploy date, and the commit SHA are
+  // all true build-time facts. When no fresh snapshot exists the components
+  // render their honest offline states, never fabricated telemetry.
+  const telemetry = await getSystemTelemetry()
   const lastDeploy = new Date().toISOString().slice(0, 10)
+  const commitSha = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7)
 
   return (
     <>
@@ -41,7 +47,7 @@ export default function Home() {
         {/* Hero — anti-portfolio thesis, server-rendered LCP headline. */}
         <section className="py-8 lg:py-10">
           <Hero lastDeploy={lastDeploy} />
-          <MetricStrip />
+          <MetricStrip telemetry={telemetry} />
         </section>
 
         {/* Evidence grid — service dashboard (left) + live proof rail (right). */}
@@ -53,10 +59,10 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-5">
             <Reveal>
-              <OperatorConsole />
+              <OperatorConsole telemetry={telemetry} />
             </Reveal>
             <Reveal delay={1}>
-              <BuildFeed />
+              <BuildFeed telemetry={telemetry} />
             </Reveal>
             <Reveal delay={2}>
               <CommitHeatmap />
@@ -158,6 +164,12 @@ export default function Home() {
             </a>
           </div>
         </section>
+
+        {/* Page footer build line — both values are build-time facts. */}
+        <div className="pb-10 font-mono text-[11px] text-ink-muted">
+          last deploy {lastDeploy}
+          {commitSha ? <span> · {commitSha}</span> : null}
+        </div>
       </Container>
     </>
   )
