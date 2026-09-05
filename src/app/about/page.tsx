@@ -46,7 +46,7 @@ const SHIPS: Ship[] = [
     outcome: 'M.Eng research: study notes that cannot make things up.',
     detail:
       'A virtual TA for students with ADHD. Lecture recordings become study notes where every released sentence cites the minute of audio it came from, and any sentence the checker cannot prove is held back in place with its reason shown. A fail-closed release gate discharges the verification conditions in Z3; the pipeline state machine is model-checked in TLA+; the Socratic tutor is given only the steps the student has demonstrated, so it cannot reveal an answer it was never told. Nine FastAPI services over a Redis Streams bus. Accepted by both supervisors in September 2026.',
-    href: 'https://github.com/kianis4/Mac-Study-Buddy',
+    href: '/architecture',
     linkLabel: 'github.com/kianis4',
   },
   {

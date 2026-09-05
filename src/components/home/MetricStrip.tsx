@@ -11,7 +11,7 @@ type Metric = {
 }
 
 const METRICS: Metric[] = [
-  { value: '57', label: 'live systemd units' },
+  { value: '70', label: 'scheduled automations' },
   { value: '3', accent: '+1', label: 'always-on watchers' },
   { value: '14k', accent: '+', label: 'autonomous commits' },
   { value: '100', accent: '%', label: 'human-gated publishes' },

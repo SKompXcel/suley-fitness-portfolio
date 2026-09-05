@@ -173,12 +173,12 @@ export const projectOverrides: Record<string, ProjectOverride> = {
     timeframe: 'Jan 2025',
     tech: ['PyTorch', 'Tensor Operations', 'Model Training'],
   },
-  'kianis4/-neural-networks-zero-to-hero': {
+  'kianis4/-neural-networks-zero-to-hero.': {
     name: 'Neural Network Framework',
     description:
       'Educational framework recreating Micrograd with automatic differentiation and gradient computation.',
     link: {
-      href: 'https://github.com/kianis4/-neural-networks-zero-to-hero',
+      href: 'https://github.com/kianis4/-neural-networks-zero-to-hero.',
       label: 'GitHub',
     },
     logo: { type: 'icon', name: 'ai', className: 'text-blue-600' },
@@ -386,8 +386,8 @@ export const customProjects: CustomProject[] = [
     description:
       "M.Eng Software Engineering research project at McMaster, supervised by Dr. William Farmer and Dr. Richard Paige. A study companion built for students with ADHD that turns lecture recordings into verified study notes: every released sentence cites the minute of audio it came from, and any sentence the checker cannot prove is visibly held back with its reason shown, never silently dropped. A fail-closed release gate discharges per-response verification conditions in Z3 (completeness, support gating, non-interference, a citation-recall floor), and the pipeline state machine is model-checked in TLA+. The Socratic tutor is given only the solution steps the student's own typed work has demonstrated, so it cannot reveal an answer it was never told. Nine Python FastAPI microservices, hexagonal ports and adapters, over a Redis Streams bus. On a 58-minute MIT lecture the gate released 23 of 29 generated claims and held back 6 with their reasons.",
     link: {
-      href: 'https://github.com/kianis4/Mac-Study-Buddy',
-      label: 'GitHub',
+      href: '/architecture',
+      label: 'Architecture & gallery',
     },
     logo: { type: 'image', src: '/MacStudyCompanion.svg' },
     timeframe: '2026',
@@ -409,7 +409,7 @@ export const customProjects: CustomProject[] = [
     priority: 1,
     badges: ['M.Eng research', 'Formal verification'],
     source: 'custom',
-    visibility: 'public',
-    github: 'https://github.com/kianis4/Mac-Study-Buddy',
+    visibility: 'private',
+    github: null,
   },
 ]

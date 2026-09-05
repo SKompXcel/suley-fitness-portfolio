@@ -23,15 +23,15 @@ const STACK: { group: string; items: string[] }[] = [
 ]
 
 const HARDWARE: { k: string; v: string }[] = [
-  { k: 'server', v: 'ryzen 9 5900x · 64gb · always-on linux' },
+  { k: 'server', v: 'ryzen 9 5900x · 32gb · always-on linux' },
   { k: 'gpu', v: 'rtx 3080 · whisper + ollama qwen2.5' },
   { k: 'primary', v: 'm5 macbook pro' },
-  { k: 'mobile', v: 'iphone 15 pro max · control surface' },
+  { k: 'mobile', v: 'iphone 15 pro · control surface' },
 ]
 
 // ── The agentic-OS capabilities, conceptual only (no IP, no internals). ────
 const CAPABILITIES: { k: string; v: string }[] = [
-  { k: 'skills / automations', v: '~22' },
+  { k: 'skills / automations', v: '70' },
   { k: 'watchers', v: 'email-triggered · ~30s' },
   { k: 'briefings', v: 'nightly health · weekday brief + EOD' },
   { k: 'research', v: 'weekly deep-research → RAG vaults' },
@@ -74,7 +74,7 @@ export default function Uses() {
             <span className="text-ink-border">·</span>{' '}
             <span className="text-ink-text">1</span> always-on hub{' '}
             <span className="text-ink-border">·</span>{' '}
-            <span className="text-ink-text">~22</span> automations{' '}
+            <span className="text-ink-text">70</span> automations{' '}
             <span className="text-ink-border">·</span>{' '}
             <span className="text-ink-text">2</span> local models
           </p>
