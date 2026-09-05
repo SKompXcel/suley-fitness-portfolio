@@ -35,8 +35,8 @@ export function SkillForm({ initial }: { initial?: ResumeSkill }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-      {error && <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">{error}</p>}
+    <form onSubmit={handleSubmit} className="admin-hairline space-y-5 rounded-2xl border border-ink-border/80 bg-ink-surface/60 p-6">
+      {error && <p className="rounded-md border border-red-400/30 bg-red-400/10 px-3 py-2 text-sm text-red-300">{error}</p>}
 
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         <Field label="Category" required>
@@ -54,19 +54,19 @@ export function SkillForm({ initial }: { initial?: ResumeSkill }) {
         </label>
       </div>
 
-      <div className="flex items-center justify-between border-t border-zinc-200 pt-4 dark:border-zinc-800">
-        {initial ? <button type="button" onClick={handleDelete} disabled={pending} className="text-sm text-red-600 hover:underline dark:text-red-400 disabled:opacity-50">Delete</button> : <span />}
+      <div className="flex items-center justify-between border-t border-ink-border/70 pt-4">
+        {initial ? <button type="button" onClick={handleDelete} disabled={pending} className="font-mono text-sm text-red-400 hover:underline disabled:opacity-50">Delete</button> : <span />}
         <div className="flex gap-3">
-          <button type="button" onClick={() => router.back()} className="text-sm text-zinc-600 dark:text-zinc-400 hover:underline">Cancel</button>
-          <button type="submit" disabled={pending} className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent disabled:opacity-50">
+          <button type="button" onClick={() => router.back()} className="font-mono text-sm text-ink-muted hover:text-accent hover:underline">Cancel</button>
+          <button type="submit" disabled={pending} className="rounded-md border border-accent/40 bg-accent/10 px-4 py-2 font-mono text-sm text-accent transition hover:bg-accent/20 disabled:opacity-50">
             {pending ? 'Saving…' : initial ? 'Save' : 'Create'}
           </button>
         </div>
       </div>
 
       <style jsx>{`
-        .input { width: 100%; border-radius: 0.375rem; border: 1px solid rgb(212 212 216); background: white; padding: 0.5rem 0.75rem; font-size: 0.875rem; }
-        :global(.dark) .input { border-color: rgb(63 63 70); background: rgb(39 39 42); color: rgb(244 244 245); }
+        .input { width: 100%; border-radius: 0.375rem; border: 1px solid #1a2330; background: rgba(6, 8, 11, 0.7); color: #e8edf2; padding: 0.5rem 0.75rem; font-size: 0.875rem; }
+        .input::placeholder { color: rgba(124, 136, 150, 0.5); }
         .input:focus { outline: none; border-color: rgb(91 200 255); box-shadow: 0 0 0 1px rgb(91 200 255); }
       `}</style>
     </form>
@@ -76,8 +76,8 @@ export function SkillForm({ initial }: { initial?: ResumeSkill }) {
 function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-        {label} {required && <span className="text-red-500">*</span>}
+      <label className="block font-mono text-[11px] uppercase tracking-wider text-ink-muted">
+        {label} {required && <span className="text-red-400">*</span>}
       </label>
       <div className="mt-1">{children}</div>
     </div>

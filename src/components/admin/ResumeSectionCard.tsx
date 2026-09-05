@@ -14,35 +14,35 @@ export function ResumeSectionCard({
   baseHref: string
 }) {
   return (
-    <div className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+    <div className="admin-hairline rounded-2xl border border-ink-border/80 bg-ink-surface/60 p-6">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-100">
-          {title} <span className="ml-1 text-sm text-zinc-400">· {items.length}</span>
+        <h2 className="text-lg font-medium text-ink-text">
+          {title} <span className="ml-1 text-sm text-ink-muted">· {items.length}</span>
         </h2>
-        <Link href={newHref} className="text-sm font-medium text-accent hover:underline dark:text-accent">
+        <Link href={newHref} className="font-mono text-xs text-accent hover:underline">
           + New
         </Link>
       </div>
 
       {items.length === 0 ? (
-        <p className="text-sm text-zinc-500">No entries yet. Add one to see it on /resume.</p>
+        <p className="text-sm text-ink-muted">No entries yet. Add one to see it on /resume.</p>
       ) : (
-        <ul className="divide-y divide-zinc-100 dark:divide-zinc-800">
+        <ul className="divide-y divide-ink-border/40">
           {items.slice(0, 5).map((item) => (
             <li key={item.id} className="flex items-center justify-between py-2">
               <Link href={`${baseHref}/${item.id}`} className="min-w-0 flex-1 hover:underline">
-                <div className="truncate text-sm font-medium text-zinc-900 dark:text-zinc-100">{item.primary}</div>
-                <div className="truncate text-xs text-zinc-500">{item.secondary}</div>
+                <div className="truncate text-sm font-medium text-ink-text">{item.primary}</div>
+                <div className="truncate text-xs text-ink-muted">{item.secondary}</div>
               </Link>
               {!item.visible && (
-                <span className="ml-3 rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wider text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
+                <span className="ml-3 rounded-full border border-ink-border bg-white/5 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-ink-muted">
                   hidden
                 </span>
               )}
             </li>
           ))}
           {items.length > 5 && (
-            <li className="pt-2 text-xs text-zinc-500">+ {items.length - 5} more</li>
+            <li className="pt-2 text-xs text-ink-muted">+ {items.length - 5} more</li>
           )}
         </ul>
       )}
