@@ -13,7 +13,7 @@ const experiences = [
   {
     role: 'Associate Account Manager, Equipment Finance',
     company: 'Mitsubishi HC Capital Canada',
-    companyUrl: 'https://www.mitsubishihcca.com/',
+    companyUrl: 'https://www.mhccna.com/',
     location: 'Burlington, ON',
     startDate: 'Sept 2025',
     endDate: null,

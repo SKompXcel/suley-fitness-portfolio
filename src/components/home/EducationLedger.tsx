@@ -42,9 +42,8 @@ export function EducationLedger() {
       <div className="mt-6 space-y-7">
         <Degree
           degree="MEng, Computing & Software"
-          detail="Year 1 complete · expected Dec 2026"
-          timeline="2025 - present"
-          current
+          detail="Research complete · accepted by both supervisors, Sept 2026"
+          timeline="2025 - 2026"
         >
           <dl className="mt-3 space-y-1.5">
             {COURSES.map((c) => (
