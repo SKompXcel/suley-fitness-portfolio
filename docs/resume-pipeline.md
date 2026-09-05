@@ -152,3 +152,11 @@ breakable glue: when a bullet's last line ends exactly flush, TeX wraps the
 the space ({#1\vspace{-2pt}}) in all variants — TeX cannot break without glue, so
 the glitch is structurally impossible now. NEVER reintroduce that space. A
 phantom-gap detector (pdftotext -bbox line-pitch scan) runs with the overflow test.
+
+- **Platform numbers recounted 2026-09-05 at skomp-studio `origin/main` `7690eb7e`:**
+  **59 Prisma models** (`grep -c '^model ' prisma/schema.prisma`), **172 API route
+  files** (`find app/api -name route.ts`), **6,139 test cases** (`it(`/`test(`
+  occurrences) — site claims say **5,000+ tests** to stay conservative and match
+  /about. The older 57/165/4,000+ set was true at the Aug 18-29 truthing and is now
+  SUPERSEDED on every surface; do not reintroduce it. Traction set unchanged
+  ($45K+ / 640 / 1,380 / 105 — verified Aug 18, not recountable from the repo).

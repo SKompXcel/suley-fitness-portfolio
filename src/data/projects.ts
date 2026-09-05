@@ -270,7 +270,7 @@ export const customProjects: CustomProject[] = [
     slug: 'skomp-studio',
     name: 'Skomp Studio',
     description:
-      'Production multi-tenant SaaS platform for fitness studio management, on a 57-model Prisma schema and 165 API routes. Its flagship tenant runs its entire operation on it with no parallel manual system: $45K+ CAD processed since launch across 640 registered users, 1,380 confirmed bookings and 105 active memberships. Row-level tenant isolation via a scoped Prisma client enforced on every query path; Square SDK with idempotent payments and per-studio credentials; AWS SES/SNS/AppSync for email, SMS and real-time messaging; 4,000+ automated tests gating every merge, Playwright suites as required status checks, branch-protected CI with shadow-DB migration checks and Gitleaks secret scanning.',
+      'Production multi-tenant SaaS platform for fitness studio management, on a 59-model Prisma schema and 172 API routes. Its flagship tenant runs its entire operation on it with no parallel manual system: $45K+ CAD processed since launch across 640 registered users, 1,380 confirmed bookings and 105 active memberships. Row-level tenant isolation via a scoped Prisma client enforced on every query path; Square SDK with idempotent payments and per-studio credentials; AWS SES/SNS/AppSync for email, SMS and real-time messaging; 5,000+ automated tests gating every merge, Playwright suites as required status checks, branch-protected CI with shadow-DB migration checks and Gitleaks secret scanning.',
     link: { href: 'https://skomp.studio/', label: 'skomp.studio' },
     logo: { type: 'image', src: '/SKomp.svg' },
     timeframe: 'Jul 2025 - Present',

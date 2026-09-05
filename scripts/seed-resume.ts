@@ -6,7 +6,7 @@ const summary =
   'engine matching TValue, the industry lease-math standard, to the penny; a multi-tenant ' +
   'booking-and-payments platform processing real revenue; a self-hosted agentic platform ' +
   'with sandboxed workers and fail-closed gates. Equipment-finance experience at Mitsubishi HC Capital ' +
-  'gives me domain fluency most engineers don’t have. Finishing an MEng in Computing & Software ' +
+  'gives me domain fluency most engineers don’t have. MEng in Computing & Software ' +
   'at McMaster.'
 
 const experiences = [
@@ -38,10 +38,10 @@ const experiences = [
     endDate: null,
     current: true,
     bullets: [
-      'Built Incite, a white-label multi-tenant booking-and-payments platform on a 57-model Prisma schema and 165 API routes: scheduling, FIFO waitlists and capacity gating, Square payments, recurring memberships with tax handling, digital waivers, ticketing, and per-tenant theming.',
+      'Built Incite, a white-label multi-tenant booking-and-payments platform on a 59-model Prisma schema and 172 API routes: scheduling, FIFO waitlists and capacity gating, Square payments, recurring memberships with tax handling, digital waivers, ticketing, and per-tenant theming.',
       'Its flagship tenant, Solstice Pilates, runs its entire operation on it with no parallel manual system: $45K+ CAD processed since launch across 640 registered users, 1,380 confirmed bookings, and 105 active memberships.',
       'Treated money as the part that cannot be wrong: idempotent Square payment processing, webhook signature verification, and row-level tenant isolation through a scoped Prisma client enforced on every query path.',
-      'Run it like a team would: 4,000+ automated tests gating every merge, Playwright suites as required status checks, Gitleaks secret scanning in CI, and branch-protected PRs with a Vercel preview deploy per change.',
+      'Run it like a team would: 5,000+ automated tests gating every merge, Playwright suites as required status checks, Gitleaks secret scanning in CI, and branch-protected PRs with a Vercel preview deploy per change.',
       'Building SKomp Forge, an agentic iOS training coach, across 11 Swift 6 modules with 52 architecture decision records carrying the tradeoffs. Its agent exposes 18 tool schemas pinned in both Swift and Python and diff-tested so the two can never silently drift, and every write is a typed proposal the lifter confirms by tap. Full-duplex voice on gpt-realtime holds P90 313ms to first audio against a 1,500ms gate, with the phone never holding an API key.',
       'Coached 100+ learners through algorithms, systems design, and technical-interview prep, running every engagement end to end since 2024: acquisition, pricing, curriculum design, live sessions, and follow-up review.',
     ],
