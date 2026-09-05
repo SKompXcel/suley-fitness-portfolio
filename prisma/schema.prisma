@@ -13,6 +13,32 @@ model AdminUser {
   createdAt    DateTime       @default(now())
   updatedAt    DateTime       @updatedAt
   passkeys     AdminPasskey[]
+  resetTokens  PasswordResetToken[]
+}
+
+model PasswordResetToken {
+  id          String    @id @default(cuid())
+  tokenHash   String    @unique
+  adminUserId String
+  adminUser   AdminUser @relation(fields: [adminUserId], references: [id])
+  expiresAt   DateTime
+  usedAt      DateTime?
+  createdAt   DateTime  @default(now())
+}
+
+// Outbound-mail queue for the break-glass password-reset flow. Vercel holds
+// no mail credentials by design: the home server drains queued rows over the
+// Bearer-authed /api/admin/pending-emails route and sends via its Workspace
+// Gmail path, then acks sent/failed.
+model PendingEmail {
+  id        String    @id @default(cuid())
+  toAddr    String
+  subject   String
+  body      String
+  status    String    @default("queued") // queued | sent | failed
+  attempts  Int       @default(0)
+  createdAt DateTime  @default(now())
+  sentAt    DateTime?
 }
 
 model AdminPasskey {
