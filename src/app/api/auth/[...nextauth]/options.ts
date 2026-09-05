@@ -1,7 +1,10 @@
 import CredentialsProvider from 'next-auth/providers/credentials'
 import bcrypt from 'bcrypt'
+import { cookies } from 'next/headers'
 import type { AuthOptions, SessionStrategy } from 'next-auth'
 import { prisma } from '@/lib/prisma'
+import { verifyPasskeyLogin } from '@/lib/passkeyLogin'
+import { AUTHENTICATION_CHALLENGE_COOKIE } from '@/lib/webauthn'
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -45,6 +48,37 @@ export const authOptions: AuthOptions = {
           id: user.id,
           email: user.email,
           name: 'Admin',
+        }
+      },
+    }),
+    // WebAuthn passkey sign-in (Face ID / Touch ID / 1Password). The client
+    // fetches POST /api/auth/passkey/options (which seals the challenge into an
+    // httpOnly cookie), runs startAuthentication(), then signIn('passkey') with
+    // the serialized assertion. authorize() runs inside the NextAuth route
+    // handler, so next/headers cookies() can read and clear the one-time
+    // challenge cookie directly. Verification lives in verifyPasskeyLogin().
+    CredentialsProvider({
+      id: 'passkey',
+      name: 'passkey',
+      credentials: {
+        response: { label: 'Passkey response', type: 'text' },
+      },
+      async authorize(credentials) {
+        if (!credentials?.response) {
+          throw new Error('Missing passkey response')
+        }
+
+        const cookieStore = await cookies()
+        const sealed = cookieStore.get(AUTHENTICATION_CHALLENGE_COOKIE)?.value
+        try {
+          return await verifyPasskeyLogin(credentials.response, sealed)
+        } finally {
+          try {
+            cookieStore.delete(AUTHENTICATION_CHALLENGE_COOKIE)
+          } catch {
+            // Cookie mutation is only available in a route-handler scope; the
+            // 5-minute TTL still bounds the challenge if this is unavailable.
+          }
         }
       },
     }),
