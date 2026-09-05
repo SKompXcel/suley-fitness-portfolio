@@ -6,7 +6,7 @@ import { buildMeta } from '@/lib/buildMeta'
 export const metadata = buildMeta({
   title: 'Social',
   description:
-    'A live Instagram feed via the Instagram Graph API, plus the other services this site integrates with.',
+    'An Instagram feed pulled via the Instagram Graph API, plus the other services this site integrates with.',
   path: '/insta',
 })
 

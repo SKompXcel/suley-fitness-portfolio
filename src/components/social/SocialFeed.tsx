@@ -88,11 +88,12 @@ function IntegrationRail() {
 
       <p className="mt-4 max-w-2xl text-xs leading-relaxed text-ink-muted">
         <span className="font-mono text-accent/80">how this works:</span> the feed
-        is pulled live from the Instagram Graph API, server-rendered and cached
-        hourly. The long-lived OAuth token is stored server-side and{' '}
+        comes from the Instagram Graph API, server-rendered and cached hourly.
+        The long-lived OAuth token is stored server-side and{' '}
         <span className="text-ink-text">auto-refreshes on a weekly cron</span>, so
-        it renews itself before it can expire, no manual token swaps, the feed
-        just stays online. Same pattern wires up Spotify and LeetCode.
+        it renews itself before it can expire, no manual token swaps. The
+        integration has outlived my posting habit: whenever I do post, it shows
+        up here on its own. Same pattern wires up Spotify and LeetCode.
       </p>
     </div>
   )
@@ -170,8 +171,9 @@ export function SocialFeed({
             Social.
           </h1>
           <p className="mt-3 max-w-xl text-base text-zinc-400">
-            A live feed off the Instagram Graph API, plus the other services this
-            site speaks to. Real integrations, not screenshots.
+            Pulled from the Instagram Graph API, plus the other services this
+            site speaks to. Real integrations, not screenshots. I post here
+            rarely; the pipeline stays warm anyway.
           </p>
         </div>
         <div className="font-mono text-xs text-ink-muted">
