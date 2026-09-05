@@ -19,6 +19,7 @@ const NAV: { href: string; label: string; exact?: boolean }[] = [
   { href: '/admin/media', label: 'media' },
   { href: '/admin/ops', label: 'ops' },
   { href: '/admin/settings', label: 'settings' },
+  { href: '/admin/docs', label: 'docs' },
 ]
 
 function isActive(pathname: string, item: (typeof NAV)[number]): boolean {
