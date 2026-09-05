@@ -161,18 +161,6 @@ export const projectOverrides: Record<string, ProjectOverride> = {
     timeframe: 'Dec 2024',
     tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Vercel'],
   },
-  'kianis4/overload-pro-ios': {
-    name: 'iOS Overload Management',
-    description:
-      'UIKit app for system load optimization using MVVM, Alamofire networking, and Core Data persistence.',
-    link: {
-      href: 'https://github.com/kianis4/overload-pro-ios',
-      label: 'GitHub',
-    },
-    logo: { type: 'icon', name: 'swift', className: 'text-orange-500' },
-    timeframe: 'Feb 2025',
-    tech: ['Swift', 'UIKit', 'Core Data', 'MVVM'],
-  },
   'kianis4/torch-bigram-language-model': {
     name: 'Bigram Language Model',
     description:
@@ -196,18 +184,6 @@ export const projectOverrides: Record<string, ProjectOverride> = {
     logo: { type: 'icon', name: 'ai', className: 'text-blue-600' },
     timeframe: 'Jan 2025',
     tech: ['Python', 'Jupyter Notebook', 'Micrograd'],
-  },
-  'kianis4/progressiveoverloadapp': {
-    name: 'Fitness Tracking App',
-    description:
-      'SwiftUI application for progressive overload tracking with Core Data storage and Combine async flows.',
-    link: {
-      href: 'https://github.com/kianis4/ProgressiveOverloadApp',
-      label: 'GitHub',
-    },
-    logo: { type: 'icon', name: 'mobile', className: 'text-red-600' },
-    timeframe: 'Oct 2024',
-    tech: ['Swift', 'SwiftUI', 'Core Data', 'Combine'],
   },
 }
 
@@ -266,10 +242,35 @@ export const customProjects: CustomProject[] = [
     github: 'https://github.com/kianis4/zakat-eligibility-triage',
   },
   {
+    slug: 'skomp-forge',
+    name: 'SKomp Forge',
+    description:
+      'Agentic iOS training coach, built across 11 Swift 6 modules with 52 architecture decision records carrying the tradeoffs. The agent exposes 18 tool schemas (12 read, 6 write) pinned in both Swift and Python and diff-tested so the two can never silently drift, and every write is a typed proposal the lifter confirms by tap, with an audit row recorded either way. Full-duplex voice on gpt-realtime runs 24 kHz PCM16 in both directions with server-side VAD and true barge-in, holding P90 313ms to first audio against a 1,500ms budget; the phone never holds an API key, only a 60-second ephemeral token minted server-side with the persona and tool schemas bound at mint. A dual-vendor proxy swaps OpenAI and Anthropic behind a six-method protocol, runs under systemd on a private tailnet with a daily token cap, and is covered by 178 passing tests. Reads 6 HealthKit types on view and persists none of them, and logs a meal from a photo into seven macro fields, with the model barred from claiming any label or portion was measured rather than estimated.',
+    link: { href: '', label: 'Private beta' },
+    logo: { type: 'icon', name: 'swift', className: 'text-orange-500' },
+    timeframe: 'Feb 2025 - Present',
+    tech: [
+      'Swift 6',
+      'SwiftUI',
+      'SwiftData',
+      'OpenAI Realtime',
+      'HealthKit',
+      'Python',
+      'FastAPI',
+      'WatchOS',
+    ],
+    featured: true,
+    priority: 1,
+    badges: ['Agentic AI', 'iOS'],
+    source: 'custom',
+    visibility: 'private',
+    github: null,
+  },
+  {
     slug: 'skomp-studio',
     name: 'Skomp Studio',
     description:
-      'Production multi-tenant SaaS platform for fitness studio management. 99K+ lines of TypeScript, 450+ registered users, 850+ bookings, $40K+ CAD processed. Row-level tenant isolation via a scopedPrisma client; Square SDK with idempotent payments and per-studio credentials; AWS SES/SNS/AppSync for email, SMS and real-time messaging; a 1,600+ test Vitest suite and 70 Playwright e2e specs against every Vercel preview; branch-protected CI with shadow-DB migration checks and Gitleaks secret scanning.',
+      'Production multi-tenant SaaS platform for fitness studio management, on a 57-model Prisma schema and 165 API routes. Its flagship tenant runs its entire operation on it with no parallel manual system: $45K+ CAD processed since launch across 640 registered users, 1,380 confirmed bookings and 105 active memberships. Row-level tenant isolation via a scoped Prisma client enforced on every query path; Square SDK with idempotent payments and per-studio credentials; AWS SES/SNS/AppSync for email, SMS and real-time messaging; 4,000+ automated tests gating every merge, Playwright suites as required status checks, branch-protected CI with shadow-DB migration checks and Gitleaks secret scanning.',
     link: { href: 'https://skomp.studio/', label: 'skomp.studio' },
     logo: { type: 'image', src: '/SKomp.svg' },
     timeframe: 'Jul 2025 - Present',
