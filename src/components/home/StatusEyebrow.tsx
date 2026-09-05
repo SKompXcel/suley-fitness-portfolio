@@ -11,7 +11,7 @@ export function StatusEyebrow({ lastDeploy }: { lastDeploy: string }) {
       />
       Systems nominal
       <span className="text-ink-border">·</span>
-      <span className="text-[#46E5A0]">57 units live</span>
+      <span className="text-[#46E5A0]">70 automations live</span>
       <span className="text-ink-border">·</span>
       last deploy {lastDeploy}
     </div>

@@ -23,7 +23,7 @@ const SYSTEMS: System[] = [
     name: 'The Agentic OS',
     href: '/architecture',
     dot: 'cyan',
-    desc: 'A self-built operating layer across two machines: conductor, memory/RAG, 57 timers, watcher jails. Runs unattended on a home server.',
+    desc: 'A self-built operating layer across two machines: conductor, memory/RAG, 70 timers, watcher jails. Runs unattended on a home server.',
     tags: ['systemd', 'Python', 'bubblewrap', 'LanceDB'],
     status: 'live',
     qualifier: '24/7 uptime',

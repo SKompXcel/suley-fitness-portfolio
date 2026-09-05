@@ -6,7 +6,7 @@ export const dynamic = 'force-dynamic'
 
 export const metadata = buildMeta({
   title: 'Resume',
-  description: 'Senior-level full-stack engineer. Experience, education, skills, certifications.',
+  description: 'Software engineer building fintech and finance platforms. Experience, education, skills, and downloadable resume variants.',
   path: '/resume',
 })
 

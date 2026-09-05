@@ -67,7 +67,7 @@ const NODES: Node[] = [
   { id: 'm5', x: 110, y: 70, label: 'M5 MacBook Pro', sub: 'primary dev', kind: 'device' },
   { id: 'mbp', x: 300, y: 70, label: 'MacBook Pro', sub: 'secondary dev', kind: 'device' },
   { id: 'iphone', x: 490, y: 70, label: 'iPhone 15 Pro', sub: 'control surface', kind: 'device' },
-  { id: 'hub', x: 300, y: 250, label: 'linux server', sub: 'ryzen 9 5900x · 64gb · always-on', kind: 'hub' },
+  { id: 'hub', x: 300, y: 250, label: 'linux server', sub: 'ryzen 9 5900x · 32gb · always-on', kind: 'hub' },
   { id: 'gpu', x: 110, y: 420, label: 'RTX 3080', sub: 'whisper · ollama qwen2.5', kind: 'gpu' },
   { id: 'agent', x: 490, y: 420, label: 'agent layer', sub: 'claude · orchestrator → workers', kind: 'agent' },
 ]
@@ -135,7 +135,7 @@ export function SystemMesh() {
     <svg
       viewBox="0 0 600 480"
       role="img"
-      aria-label="Workflow architecture: an M5 MacBook Pro, a secondary MacBook Pro, and an iPhone 15 Pro form a Tailscale private mesh with Syncthing live file sync, connecting to an always-on Ryzen 9 5900X / 64GB Linux server. The server runs local AI on an RTX 3080 (Whisper transcription and Ollama qwen2.5) and a Claude-based agent layer that dispatches an orchestrator to worker agents."
+      aria-label="Workflow architecture: an M5 MacBook Pro, a secondary MacBook Pro, and an iPhone 15 Pro form a Tailscale private mesh with Syncthing live file sync, connecting to an always-on Ryzen 9 5900X / 32GB Linux server. The server runs local AI on an RTX 3080 (Whisper transcription and Ollama qwen2.5) and a Claude-based agent layer that dispatches an orchestrator to worker agents."
       className="w-full"
     >
       {/* tier labels */}
