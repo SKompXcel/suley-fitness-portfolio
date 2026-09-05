@@ -30,43 +30,43 @@ export function ProjectsTable({ rows }: { rows: Row[] }) {
   }
 
   return (
-    <div className="overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+    <div className="admin-hairline overflow-hidden rounded-2xl border border-ink-border/80 bg-ink-surface/60">
       {flash && (
-        <div className="border-b border-zinc-200 bg-accent px-4 py-2 text-sm text-accent dark:border-zinc-800 dark:bg-accent/20 dark:text-accent">
+        <div className="border-b border-ink-border/70 bg-accent/10 px-4 py-2 font-mono text-xs text-accent">
           {flash}
         </div>
       )}
-      <table className="min-w-full divide-y divide-zinc-200 dark:divide-zinc-800">
-        <thead className="bg-zinc-50 dark:bg-zinc-950/50">
+      <table className="min-w-full divide-y divide-ink-border/50">
+        <thead className="bg-ink-bg/60">
           <tr>
-            <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wide text-zinc-500">Name</th>
-            <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wide text-zinc-500">Source</th>
-            <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wide text-zinc-500">Visible</th>
-            <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wide text-zinc-500">Featured</th>
-            <th className="px-3 py-2 text-left text-xs font-medium uppercase tracking-wide text-zinc-500">Priority</th>
-            <th className="px-3 py-2 text-right text-xs font-medium uppercase tracking-wide text-zinc-500">Actions</th>
+            <th className="px-3 py-2 text-left font-mono text-[10px] uppercase tracking-wider text-ink-muted">Name</th>
+            <th className="px-3 py-2 text-left font-mono text-[10px] uppercase tracking-wider text-ink-muted">Source</th>
+            <th className="px-3 py-2 text-left font-mono text-[10px] uppercase tracking-wider text-ink-muted">Visible</th>
+            <th className="px-3 py-2 text-left font-mono text-[10px] uppercase tracking-wider text-ink-muted">Featured</th>
+            <th className="px-3 py-2 text-left font-mono text-[10px] uppercase tracking-wider text-ink-muted">Priority</th>
+            <th className="px-3 py-2 text-right font-mono text-[10px] uppercase tracking-wider text-ink-muted">Actions</th>
           </tr>
         </thead>
-        <tbody className="divide-y divide-zinc-100 dark:divide-zinc-800">
+        <tbody className="divide-y divide-ink-border/40">
           {rows.map((row) => {
             if (row.kind === 'github-only') {
               return (
-                <tr key={row.github.githubSlug} className="bg-zinc-50/40 dark:bg-zinc-950/30">
+                <tr key={row.github.githubSlug} className="bg-ink-bg/40">
                   <td className="px-3 py-2">
-                    <div className="font-medium text-zinc-900 dark:text-zinc-100">{row.github.name}</div>
-                    <div className="text-xs text-zinc-500">{row.github.githubSlug}</div>
+                    <div className="font-medium text-ink-text">{row.github.name}</div>
+                    <div className="text-xs text-ink-muted">{row.github.githubSlug}</div>
                   </td>
-                  <td className="px-3 py-2 text-sm text-zinc-600 dark:text-zinc-400">GitHub (live, no override)</td>
-                  <td className="px-3 py-2 text-xs text-zinc-500">auto</td>
-                  <td className="px-3 py-2 text-xs text-zinc-500">—</td>
-                  <td className="px-3 py-2 text-xs text-zinc-500">99</td>
+                  <td className="px-3 py-2 text-sm text-ink-muted">GitHub (live, no override)</td>
+                  <td className="px-3 py-2 text-xs text-ink-muted">auto</td>
+                  <td className="px-3 py-2 text-xs text-ink-muted">·</td>
+                  <td className="px-3 py-2 text-xs text-ink-muted">99</td>
                   <td className="px-3 py-2 text-right">
                     <button
                       disabled={pending}
                       onClick={() =>
                         handle(upsertGithubOverride(row.github.githubSlug), `Override created for ${row.github.githubSlug}`)
                       }
-                      className="text-xs font-medium text-accent hover:underline dark:text-accent disabled:opacity-50"
+                      className="font-mono text-xs text-accent hover:underline disabled:opacity-50"
                     >
                       + Create override
                     </button>
@@ -79,10 +79,10 @@ export function ProjectsTable({ rows }: { rows: Row[] }) {
             return (
               <tr key={e.id}>
                 <td className="px-3 py-2">
-                  <div className="font-medium text-zinc-900 dark:text-zinc-100">{e.name ?? row.github?.name ?? e.slug}</div>
-                  <div className="text-xs text-zinc-500">{e.githubSlug ?? e.slug}</div>
+                  <div className="font-medium text-ink-text">{e.name ?? row.github?.name ?? e.slug}</div>
+                  <div className="text-xs text-ink-muted">{e.githubSlug ?? e.slug}</div>
                 </td>
-                <td className="px-3 py-2 text-sm text-zinc-600 dark:text-zinc-400">
+                <td className="px-3 py-2 text-sm text-ink-muted">
                   {e.source === 'GITHUB' ? 'GitHub + override' : 'Custom'}
                 </td>
                 <td className="px-3 py-2">
@@ -124,13 +124,13 @@ export function ProjectsTable({ rows }: { rows: Row[] }) {
                         handle(setProjectPriority({ slug: e.slug, priority }), `${e.slug} priority=${priority}`)
                       }
                     }}
-                    className="w-16 rounded border border-zinc-300 bg-white px-2 py-1 text-sm dark:border-zinc-700 dark:bg-zinc-800"
+                    className="w-16 rounded border border-ink-border bg-ink-bg/70 px-2 py-1 text-sm text-ink-text"
                   />
                 </td>
                 <td className="px-3 py-2 text-right space-x-3">
                   <Link
                     href={`/admin/projects/${e.slug}`}
-                    className="text-xs font-medium text-accent hover:underline dark:text-accent"
+                    className="font-mono text-xs text-accent hover:underline"
                   >
                     Edit
                   </Link>
@@ -141,7 +141,7 @@ export function ProjectsTable({ rows }: { rows: Row[] }) {
                         handle(deleteProject(e.slug), `${e.slug} deleted`)
                       }
                     }}
-                    className="text-xs font-medium text-red-600 hover:underline dark:text-red-400 disabled:opacity-50"
+                    className="font-mono text-xs text-red-400 hover:underline disabled:opacity-50"
                   >
                     Delete
                   </button>

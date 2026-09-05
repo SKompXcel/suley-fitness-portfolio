@@ -120,6 +120,23 @@
   }
 }
 
+/* ── Admin operator console ───────────────────────────────────────────────
+   Every admin panel carries the house 1px cyan top-accent hairline (the same
+   structure language as the public cards) without extra DOM per panel. */
+.admin-hairline {
+  position: relative;
+}
+.admin-hairline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(91, 200, 255, 0.35), transparent);
+}
+
 /* ── Terminal accent variable ──────────────────────────────────────────────
    The `theme` command cycles --hud-accent; nothing reads it unless set, so the
    default arc-cyan governs until the visitor opts in. Dark-only, never bg. */

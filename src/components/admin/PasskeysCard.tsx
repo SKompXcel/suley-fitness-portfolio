@@ -109,28 +109,28 @@ export function PasskeysCard() {
   }
 
   return (
-    <section className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+    <section className="admin-hairline rounded-2xl border border-ink-border/80 bg-ink-surface/60 p-6">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-100">Passkeys</h2>
-        {flash && <span className="text-xs text-accent dark:text-accent">{flash}</span>}
+        <h2 className="text-lg font-medium text-ink-text">Passkeys</h2>
+        {flash && <span className="font-mono text-xs text-accent">{flash}</span>}
       </div>
-      <p className="mb-4 text-xs text-zinc-500">
+      <p className="mb-4 text-xs text-ink-muted">
         Sign in with Face ID, Touch ID, or a password manager like 1Password. Your password always keeps working as a fallback.
       </p>
 
-      {error && <p className="mb-4 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">{error}</p>}
+      {error && <p className="mb-4 rounded-md border border-red-400/30 bg-red-400/10 px-3 py-2 text-sm text-red-300">{error}</p>}
 
       {passkeys === null ? (
-        <p className="text-sm text-zinc-500">Loading…</p>
+        <p className="text-sm text-ink-muted">Loading…</p>
       ) : passkeys.length === 0 ? (
-        <p className="text-sm text-zinc-500">No passkeys registered yet.</p>
+        <p className="text-sm text-ink-muted">No passkeys registered yet.</p>
       ) : (
-        <ul className="divide-y divide-zinc-200 dark:divide-zinc-800">
+        <ul className="divide-y divide-ink-border/50">
           {passkeys.map((passkey) => (
             <li key={passkey.id} className="flex items-center justify-between gap-4 py-3">
               <div>
-                <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">{passkey.label}</p>
-                <p className="text-xs text-zinc-500">
+                <p className="text-sm font-medium text-ink-text">{passkey.label}</p>
+                <p className="text-xs text-ink-muted">
                   Added {formatDate(passkey.createdAt)} · Last used {formatDate(passkey.lastUsedAt)}
                 </p>
               </div>
@@ -138,7 +138,7 @@ export function PasskeysCard() {
                 type="button"
                 onClick={() => handleDelete(passkey)}
                 disabled={busy}
-                className="rounded-md border border-zinc-300 px-3 py-1.5 text-xs font-medium text-red-700 hover:bg-red-50 disabled:opacity-50 dark:border-zinc-700 dark:text-red-400 dark:hover:bg-red-900/20"
+                className="rounded-md border border-red-400/30 px-3 py-1.5 font-mono text-xs text-red-400 transition hover:bg-red-400/10 disabled:opacity-50"
               >
                 Delete
               </button>
@@ -152,7 +152,7 @@ export function PasskeysCard() {
           type="button"
           onClick={handleAdd}
           disabled={busy}
-          className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent disabled:opacity-50"
+          className="rounded-md border border-accent/40 bg-accent/10 px-4 py-2 font-mono text-sm text-accent transition hover:bg-accent/20 disabled:opacity-50"
         >
           {busy ? 'Working…' : 'Add passkey'}
         </button>

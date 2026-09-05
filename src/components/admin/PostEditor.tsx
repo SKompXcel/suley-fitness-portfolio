@@ -81,7 +81,7 @@ export function PostEditor({ initial, mode }: Props) {
   return (
     <form onSubmit={onSubmit} className="space-y-6">
       {error && (
-        <div className="rounded-md bg-red-50 p-3 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">
+        <div className="rounded-md border border-red-400/30 bg-red-400/10 px-3 py-2 text-sm text-red-300">
           {error}
         </div>
       )}
@@ -140,7 +140,7 @@ export function PostEditor({ initial, mode }: Props) {
               placeholder="/images/cover.png or Blob URL"
               className="input flex-1"
             />
-            <label className="cursor-pointer rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-800">
+            <label className="cursor-pointer rounded-md border border-ink-border px-3 py-2 font-mono text-sm text-ink-muted transition hover:border-accent/40 hover:text-accent">
               {uploading ? 'Uploading…' : 'Upload'}
               <input
                 type="file"
@@ -155,17 +155,17 @@ export function PostEditor({ initial, mode }: Props) {
 
       <div>
         <div className="mb-2 flex items-center justify-between">
-          <label className="text-sm font-medium text-zinc-700 dark:text-zinc-300">Body (Markdown)</label>
+          <label className="font-mono text-[11px] uppercase tracking-wider text-ink-muted">Body (Markdown)</label>
           <button
             type="button"
             onClick={() => setPreview(!preview)}
-            className="text-xs font-medium text-accent hover:underline dark:text-accent"
+            className="font-mono text-xs text-accent hover:underline"
           >
             {preview ? 'Edit' : 'Preview'}
           </button>
         </div>
         {preview ? (
-          <div className="prose prose-zinc max-w-none rounded-md border border-zinc-200 bg-white p-4 dark:prose-invert dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="prose prose-invert max-w-none rounded-md border border-ink-border bg-ink-surface/60 p-4">
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{form.body}</ReactMarkdown>
           </div>
         ) : (
@@ -179,16 +179,19 @@ export function PostEditor({ initial, mode }: Props) {
         )}
       </div>
 
-      <div className="flex items-center justify-end gap-3 border-t border-zinc-200 pt-4 dark:border-zinc-800">
-        <button type="button" onClick={() => router.back()} className="text-sm text-zinc-600 hover:underline dark:text-zinc-400">
+      <div className="flex items-center justify-end gap-3 border-t border-ink-border/70 pt-4">
+        <span className="mr-auto font-mono text-[11px] text-ink-muted">
+          saving never publishes · publish/unpublish from the posts list
+        </span>
+        <button type="button" onClick={() => router.back()} className="font-mono text-sm text-ink-muted hover:text-accent hover:underline">
           Cancel
         </button>
         <button
           type="submit"
           disabled={saving}
-          className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-accent disabled:opacity-50"
+          className="rounded-md border border-accent/40 bg-accent/10 px-4 py-2 font-mono text-sm text-accent transition hover:bg-accent/20 disabled:opacity-50"
         >
-          {saving ? 'Saving…' : mode === 'create' ? 'Create draft' : 'Save draft'}
+          {saving ? 'saving…' : mode === 'create' ? 'create draft' : 'save changes'}
         </button>
       </div>
 
@@ -196,15 +199,14 @@ export function PostEditor({ initial, mode }: Props) {
         .input {
           width: 100%;
           border-radius: 0.375rem;
-          border: 1px solid rgb(212 212 216);
-          background: white;
+          border: 1px solid #1a2330;
+          background: rgba(6, 8, 11, 0.7);
+          color: #e8edf2;
           padding: 0.5rem 0.75rem;
           font-size: 0.875rem;
         }
-        :global(.dark) .input {
-          border-color: rgb(63 63 70);
-          background: rgb(39 39 42);
-          color: rgb(244 244 245);
+        .input::placeholder {
+          color: rgba(124, 136, 150, 0.5);
         }
         .input:focus {
           outline: none;
@@ -219,8 +221,8 @@ export function PostEditor({ initial, mode }: Props) {
 function Field({ label, required, children }: { label: string; required?: boolean; children: React.ReactNode }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">
-        {label} {required && <span className="text-red-500">*</span>}
+      <label className="block font-mono text-[11px] uppercase tracking-wider text-ink-muted">
+        {label} {required && <span className="text-red-400">*</span>}
       </label>
       <div className="mt-1">{children}</div>
     </div>

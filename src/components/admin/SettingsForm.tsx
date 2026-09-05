@@ -55,24 +55,24 @@ export function SettingsForm({ initial }: { initial: SettingsMap }) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {error && <p className="rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">{error}</p>}
+      {error && <p className="rounded-md border border-red-400/30 bg-red-400/10 px-3 py-2 text-sm text-red-300">{error}</p>}
 
-      <section className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+      <section className="admin-hairline rounded-2xl border border-ink-border/80 bg-ink-surface/60 p-6">
         <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-100">Homepage hero</h2>
-          {flash && <span className="text-xs text-accent dark:text-accent">{flash}</span>}
+          <h2 className="text-lg font-medium text-ink-text">Homepage hero</h2>
+          {flash && <span className="font-mono text-xs text-accent">{flash}</span>}
         </div>
         <div className="space-y-4">
           {HERO_FIELDS.map((f) => (
             <div key={f.key}>
-              <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">{f.label}</label>
+              <label className="block font-mono text-[11px] uppercase tracking-wider text-ink-muted">{f.label}</label>
               {f.multiline ? (
                 <textarea
                   rows={2}
                   value={values[f.key] ?? ''}
                   placeholder={f.placeholder}
                   onChange={(e) => update(f.key as string, e.target.value)}
-                  className="mt-1 w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-800"
+                  className="mt-1 w-full rounded-md border border-ink-border bg-ink-bg/70 px-3 py-2 text-sm text-ink-text placeholder:text-ink-muted/50"
                 />
               ) : (
                 <input
@@ -80,7 +80,7 @@ export function SettingsForm({ initial }: { initial: SettingsMap }) {
                   value={values[f.key] ?? ''}
                   placeholder={f.placeholder}
                   onChange={(e) => update(f.key as string, e.target.value)}
-                  className="mt-1 w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-800"
+                  className="mt-1 w-full rounded-md border border-ink-border bg-ink-bg/70 px-3 py-2 text-sm text-ink-text placeholder:text-ink-muted/50"
                 />
               )}
             </div>
@@ -88,19 +88,19 @@ export function SettingsForm({ initial }: { initial: SettingsMap }) {
         </div>
       </section>
 
-      <section className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-        <h2 className="mb-4 text-lg font-medium text-zinc-900 dark:text-zinc-100">Social links</h2>
-        <p className="mb-4 text-xs text-zinc-500">Leave blank to hide. These replace the hardcoded links in the header/footer.</p>
+      <section className="admin-hairline rounded-2xl border border-ink-border/80 bg-ink-surface/60 p-6">
+        <h2 className="mb-4 text-lg font-medium text-ink-text">Social links</h2>
+        <p className="mb-4 text-xs text-ink-muted">Leave blank to hide. These replace the hardcoded links in the header/footer.</p>
         <div className="space-y-4">
           {SOCIAL_FIELDS.map((f) => (
             <div key={f.key}>
-              <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">{f.label}</label>
+              <label className="block font-mono text-[11px] uppercase tracking-wider text-ink-muted">{f.label}</label>
               <input
                 type="text"
                 value={values[f.key] ?? ''}
                 placeholder={f.placeholder}
                 onChange={(e) => update(f.key as string, e.target.value)}
-                className="mt-1 w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-800"
+                className="mt-1 w-full rounded-md border border-ink-border bg-ink-bg/70 px-3 py-2 text-sm text-ink-text placeholder:text-ink-muted/50"
               />
             </div>
           ))}
@@ -108,7 +108,7 @@ export function SettingsForm({ initial }: { initial: SettingsMap }) {
       </section>
 
       <div className="flex justify-end">
-        <button type="submit" disabled={pending} className="rounded-md bg-accent px-6 py-2 text-sm font-medium text-white hover:bg-accent disabled:opacity-50">
+        <button type="submit" disabled={pending} className="rounded-md border border-accent/40 bg-accent/10 px-6 py-2 font-mono text-sm text-accent transition hover:bg-accent/20 disabled:opacity-50">
           {pending ? 'Saving…' : 'Save all settings'}
         </button>
       </div>

@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from 'next/server'
-import { put } from '@vercel/blob'
+import { put, del } from '@vercel/blob'
 import { requireAdmin } from '@/lib/adminGuard'
 import { prisma } from '@/lib/prisma'
 
@@ -50,4 +50,32 @@ export async function POST(request: NextRequest) {
   })
 
   return NextResponse.json({ url: blob.url, pathname })
+}
+
+export async function DELETE(request: NextRequest) {
+  try {
+    await requireAdmin()
+  } catch {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
+  let id: unknown
+  try {
+    id = ((await request.json()) as { id?: unknown })?.id
+  } catch {
+    id = undefined
+  }
+  if (typeof id !== 'string' || !id) {
+    return NextResponse.json({ error: 'id required' }, { status: 400 })
+  }
+
+  const media = await prisma.media.findUnique({ where: { id } })
+  if (!media) {
+    return NextResponse.json({ error: 'media not found' }, { status: 404 })
+  }
+
+  await del(media.url)
+  await prisma.media.delete({ where: { id } })
+
+  return NextResponse.json({ ok: true })
 }

@@ -35,13 +35,13 @@ export function ResumeDocumentCard({ doc }: { doc: ResumeDocument }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+    <form onSubmit={handleSubmit} className="admin-hairline rounded-2xl border border-ink-border/80 bg-ink-surface/60 p-6">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-lg font-medium text-zinc-900 dark:text-zinc-100">Document</h2>
-        {flash && <span className="text-xs text-accent dark:text-accent">{flash}</span>}
+        <h2 className="text-lg font-medium text-ink-text">Document</h2>
+        {flash && <span className="font-mono text-xs text-accent">{flash}</span>}
       </div>
 
-      {error && <p className="mb-3 rounded-md bg-red-50 px-3 py-2 text-sm text-red-700 dark:bg-red-900/20 dark:text-red-400">{error}</p>}
+      {error && <p className="mb-3 rounded-md border border-red-400/30 bg-red-400/10 px-3 py-2 text-sm text-red-300">{error}</p>}
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <Input label="Title" value={form.title} onChange={(v) => setForm({ ...form, title: v })} />
@@ -51,12 +51,12 @@ export function ResumeDocumentCard({ doc }: { doc: ResumeDocument }) {
         <Input label="Phone" value={form.phone} onChange={(v) => setForm({ ...form, phone: v })} />
       </div>
       <div className="mt-3">
-        <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">Summary (shown at top of /resume)</label>
+        <label className="block font-mono text-[11px] uppercase tracking-wider text-ink-muted">Summary (shown at top of /resume)</label>
         <textarea
           rows={3}
           value={form.summary}
           onChange={(e) => setForm({ ...form, summary: e.target.value })}
-          className="mt-1 w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-800"
+          className="mt-1 w-full rounded-md border border-ink-border bg-ink-bg/70 px-3 py-2 text-sm text-ink-text placeholder:text-ink-muted/50"
         />
       </div>
 
@@ -64,7 +64,7 @@ export function ResumeDocumentCard({ doc }: { doc: ResumeDocument }) {
         <button
           type="submit"
           disabled={saving}
-          className="rounded-md bg-accent px-4 py-2 text-sm font-medium text-white hover:bg-accent disabled:opacity-50"
+          className="rounded-md border border-accent/40 bg-accent/10 px-4 py-2 font-mono text-sm text-accent transition hover:bg-accent/20 disabled:opacity-50"
         >
           {saving ? 'Saving…' : 'Save document'}
         </button>
@@ -76,13 +76,13 @@ export function ResumeDocumentCard({ doc }: { doc: ResumeDocument }) {
 function Input({ label, value, onChange, placeholder, type = 'text' }: { label: string; value: string; onChange: (v: string) => void; placeholder?: string; type?: string }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-zinc-700 dark:text-zinc-300">{label}</label>
+      <label className="block font-mono text-[11px] uppercase tracking-wider text-ink-muted">{label}</label>
       <input
         type={type}
         value={value}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
-        className="mt-1 w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-800"
+        className="mt-1 w-full rounded-md border border-ink-border bg-ink-bg/70 px-3 py-2 text-sm text-ink-text placeholder:text-ink-muted/50"
       />
     </div>
   )
